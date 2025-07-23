@@ -96,11 +96,64 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float-1': {
+					'0%, 100%': { 
+						transform: 'translate(0, 0) rotate(0deg)',
+						opacity: '0.7'
+					},
+					'25%': { 
+						transform: 'translate(30px, -20px) rotate(5deg)',
+						opacity: '1'
+					},
+					'50%': { 
+						transform: 'translate(-20px, -40px) rotate(-3deg)',
+						opacity: '0.8'
+					},
+					'75%': { 
+						transform: 'translate(-40px, -10px) rotate(8deg)',
+						opacity: '0.9'
+					}
+				},
+				'float-2': {
+					'0%, 100%': { 
+						transform: 'translate(0, 0) rotate(0deg)',
+						opacity: '0.6'
+					},
+					'33%': { 
+						transform: 'translate(-25px, -30px) rotate(-5deg)',
+						opacity: '0.9'
+					},
+					'66%': { 
+						transform: 'translate(35px, -15px) rotate(7deg)',
+						opacity: '0.7'
+					}
+				},
+				'float-3': {
+					'0%, 100%': { 
+						transform: 'translate(0, 0) rotate(0deg)',
+						opacity: '0.5'
+					},
+					'20%': { 
+						transform: 'translate(20px, -25px) rotate(4deg)',
+						opacity: '0.8'
+					},
+					'60%': { 
+						transform: 'translate(-30px, -35px) rotate(-6deg)',
+						opacity: '1'
+					},
+					'80%': { 
+						transform: 'translate(15px, -5px) rotate(2deg)',
+						opacity: '0.6'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float-1': 'float-1 8s ease-in-out infinite',
+				'float-2': 'float-2 12s ease-in-out infinite',
+				'float-3': 'float-3 10s ease-in-out infinite'
 			}
 		}
 	},
