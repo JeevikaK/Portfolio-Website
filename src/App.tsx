@@ -4,20 +4,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
-import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  useEffect(() => {
-    document.documentElement.classList.add('dark');
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
         <TooltipProvider>
           <Toaster />
           <Sonner />
