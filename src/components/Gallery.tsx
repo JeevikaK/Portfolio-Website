@@ -1,64 +1,37 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Calendar, MapPin, Users, Award } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Users, Award, Linkedin } from "lucide-react";
 
 const Gallery = () => {
   const galleryItems = [
     {
-      type: "conference",
-      title: "Tech Conference 2023",
-      image: "/api/placeholder/400/300",
-      description: "Speaking at React Summit about modern web development practices",
-      date: "October 2023",
-      location: "San Francisco, CA",
-      tags: ["Speaking", "React", "Conference"]
+      type: "Research",
+      title: "Research under Unisys",
+      image: "src/assets/UnisysResearch.png", 
+      description: "Research collaboration with Unisys and Ramaiah Institute of Technology developing the accessibility accelerator Foresight",
+      date: "May 2024",
+      achievement: "Research",
+      link: "https://drive.google.com/file/d/16EL7E8wdPXN6FFzPgy5EiARDtngURw_u/view?usp=sharing"
     },
     {
-      type: "project",
-      title: "Award-Winning E-commerce Platform",
-      image: "/api/placeholder/400/300", 
-      description: "Led development of a revolutionary e-commerce solution that won Best Innovation Award",
-      date: "August 2023",
-      achievement: "Innovation Award",
-      tags: ["React", "Node.js", "AWS", "Award"]
+      type: "award",
+      title: "Best Project - Pradarshana",
+      image: "src/assets/Pradarshana.jpeg",
+      description: "First place at the Final Year innovation exhibition for Foresight project at Ramaiah Institute of Technology",
+      date: "May 2024",
+      achievement: "Development",
+      link: "https://drive.google.com/file/d/1LHQk4tzCKmij75kSKlS7N-tzXy5YDWs2/view?usp=sharing"
     },
     {
-      type: "workshop",
-      title: "Full-Stack Development Workshop",
-      image: "/api/placeholder/400/300",
-      description: "Conducted a 3-day intensive workshop for 50+ developers on modern full-stack development",
+      type: "Finalist",
+      title: "Unisys Innovation Program",
+      image: "src/assets/UnisysInnovation.png",
+      description: "Finalist in Unisys Innovation Program Y14 out of 700 global applicants for the project AuthEZ, a passwordless authentication IDP as an SDK that eliminates vulnerabilities in traditional logins",
       date: "June 2023",
-      participants: "50+ developers",
-      tags: ["Teaching", "Full-Stack", "Workshop"]
+      participants: "700 teams",
     },
-    {
-      type: "hackathon",
-      title: "Global Hackathon Winner",
-      image: "/api/placeholder/400/300",
-      description: "First place winner in the Global Climate Tech Hackathon with an innovative carbon tracking app",
-      date: "April 2023",
-      achievement: "1st Place",
-      tags: ["Hackathon", "Climate Tech", "Mobile"]
-    },
-    {
-      type: "meetup",
-      title: "Local Tech Meetup Speaker",
-      image: "/api/placeholder/400/300",
-      description: "Regular speaker at local JavaScript meetups, sharing knowledge with the community",
-      date: "March 2023",
-      location: "Seattle, WA",
-      tags: ["Community", "JavaScript", "Meetup"]
-    },
-    {
-      type: "certification",
-      title: "Cloud Architecture Certification",
-      image: "/api/placeholder/400/300",
-      description: "Achieved AWS Solutions Architect Professional certification",
-      date: "February 2023",
-      achievement: "AWS Certified",
-      tags: ["AWS", "Cloud", "Certification"]
-    }
+    
   ];
 
   const getIcon = (type: string) => {
@@ -81,14 +54,14 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-secondary">
+    <section id="gallery" className="py-20 bg-gradient-to-br from-[#F07167] via-[#FED9B7] to-[#FDFCDC] dark:from-[#0081A7] dark:via-[#00AFB9] dark:to-[#195A6B]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Gallery & Achievements
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A visual showcase of my professional journey, speaking engagements, awards, and community involvement
+            A visual showcase of my professional journey, achievements and awards.
           </p>
         </div>
 
@@ -113,9 +86,16 @@ const Gallery = () => {
                   <h3 className="text-lg font-semibold text-foreground leading-tight">
                     {item.title}
                   </h3>
-                  <Button variant="ghost" size="icon" className="hover:bg-primary/10 flex-shrink-0">
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
+                  {item.link && (
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="hover:bg-primary/10 flex-shrink-0"
+                      onClick={() => window.open(item.link, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  )}
                 </div>
                 
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
@@ -128,13 +108,6 @@ const Gallery = () => {
                     <span>{item.date}</span>
                   </div>
                   
-                  {item.location && (
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <MapPin className="h-4 w-4" />
-                      <span>{item.location}</span>
-                    </div>
-                  )}
-                  
                   {item.achievement && (
                     <div className="flex items-center gap-2 text-sm text-primary font-medium">
                       {getIcon(item.type)}
@@ -142,36 +115,30 @@ const Gallery = () => {
                     </div>
                   )}
                   
-                  {item.participants && (
+                  {(item as any).participants && (
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Users className="h-4 w-4" />
-                      <span>{item.participants}</span>
+                      <span>{(item as any).participants}</span>
                     </div>
                   )}
                 </div>
                 
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {item.tags.map((tag, tagIndex) => (
-                    <Badge 
-                      key={tagIndex}
-                      variant="outline"
-                      className="text-xs border-primary/30 text-primary"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
               </div>
             </Card>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10">
-            View More on LinkedIn
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
+        <div className="text-center mt-8">
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="bg-[#0077B5] hover:bg-[#005885] text-white border-[#0077B5] hover:border-[#005885] transition-all duration-300 hover:scale-105"
+              onClick={() => window.open('https://www.linkedin.com/in/jeevika-kiran-a0957b242/recent-activity/all/', '_blank')}
+            >
+              <Linkedin className="h-5 w-5 mr-2" />
+              View all posts on LinkedIn
+            </Button>
+          </div>
       </div>
     </section>
   );

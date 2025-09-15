@@ -25,7 +25,7 @@ const Navigation = () => {
     { label: 'Skills', id: 'skills' },
     { label: 'Experience', id: 'experience' },
     { label: 'Projects', id: 'projects' },
-    { label: 'Gallery', id: 'gallery' },
+    { label: 'Achievements', id: 'gallery' },
     { label: 'Certifications', id: 'certifications' },
     { label: 'Contact', id: 'contact' },
   ];
@@ -45,7 +45,7 @@ const Navigation = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-xl font-bold hover:bg-primary/10 transition-colors duration-300"
           >
-            Sarah
+            Jeevika Kiran
           </Button>
 
           {/* Desktop Navigation */}

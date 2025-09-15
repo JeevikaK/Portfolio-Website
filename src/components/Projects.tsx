@@ -6,41 +6,53 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management, secure payment processing, and responsive design.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Foresight",
+      description: "Foresight is an open-source accessibility accelerator for visually impaired users, integrating ShareGPT4V for visual analysis, Detectron2 for object grounding, and Gemma 7B for improved accuracy. With speech-to-text and text-to-speech interaction, it reduces hallucinations and identifies 12% more useful information than baseline models, delivering reliable, context-aware assistance",
+      image: "src/assets/Foresight.jpeg",
+      technologies: ["Generative AI", "Detectron2", "ShareGPT4V", "Gemma 7B", "ReactJS", "Django Framework", "SQLite", "Kotlin"],
+      liveUrl: "https://drive.google.com/file/d/17JhqY_Z2MobLL9N9fnKZo53WVXx6ZM8x/view?usp=sharing",
+      githubUrl: "https://github.com/JeevikaK/Foresight"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, team collaboration features, and intuitive drag-and-drop interface.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "AuthEZ",
+      description: "AuthEZ is a passwordless authentication IDP as an SDK that eliminates vulnerabilities in traditional logins. It integrates SSO, Facenet-based facial verification with liveness checks, Resemblyzer voice embeddings, and RSA cryptographic signatures via QR codes for legacy devices, delivering secure and seamless access.",
+      image: "src/assets/AuthEZ.png",
+      technologies: ["Identity Provider", "Facenet", "Resemblyzer", "WebAuthn API", "ReactJS", "Javascript", "Tailwind CSS"],
+      liveUrl: "https://drive.google.com/file/d/1-Rdxjag_jsWGm6aWPfSP0xFCzdbx3MOJ/view?usp=drivesdk",
+      githubUrl: "https://github.com/JeevikaK/AuthEZ"
     },
     {
-      title: "Weather Dashboard",
-      description: "A beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics using modern web APIs.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-      technologies: ["React", "Chart.js", "OpenWeather API", "SCSS"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Memoirs",
+      description: "Mental health surveillance and assessment platform for teens and students. Features personalized music recommendations with Solfeggio frequencies and AI-powered mental health assistance.",
+      image: "src/assets/memoirs.jpg",
+      technologies: ["React", "Typescript", "Next.js"],
+      githubUrl: "https://github.com/JeevikaK/MindMap/tree/MindMap"
     },
     {
-      title: "Portfolio CMS",
-      description: "A headless CMS for managing portfolio content with a clean admin interface, markdown support, and automatic image optimization.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "Sanity", "TypeScript", "Vercel"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Student Buzz",
+      description: "Introducing StudentBuzz, a cutting-edge collaborative platform that empowers students to showcase their skills, projects, and accomplishments while fostering a vibrant community of learning and collaboration. With StudentBuzz, students can take their educational journey to the next level by connecting with like-minded peers, engaging in club activities, and collaborating with students from other colleges.",
+      image: "src/assets/StudentBuzz.jpeg",
+      technologies: ["Django Framework", "ReactJS", "SQLite"],
+      githubUrl: "https://github.com/JeevikaK/Student-Buzz"
+    },
+    {
+      title: "Car Theft Detection System",
+      description: "Security of parked cars against theft is a long existing concern. We present an automated way of detecting vehicle theft as it happens using moving object detection and barcode scanning for each parking entry. The detected edges of the output should give a clear image of the moving object from the video. The security personnel or the parking lot operator gets notified about the movement.",
+      image: "src/assets/carparkingdetection.png",
+      technologies: ["Python", "OpenCV", "Computer Vision", "Digital Image Processing"],
+      githubUrl: "https://github.com/JeevikaK/Car-theft-detection-Parking"
+    },
+    {
+      title: "Valunique",
+      description: "Innovative recruitment platform eliminating bias through faceless hiring processes, developed during Volvo Group internship.  The platform included multi-level access controls across the admin and candidate portals, enhancing security and usability.",
+      image: "src/assets/valunique.jpg",
+      technologies: ["ReactJS", "NodeJS", "Microsoft SQL"],
+      githubUrl: "https://github.com/JeevikaK/Valunique-Backend"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-primary">
+    <section id="projects" className="py-20 bg-gradient-to-br from-[#FED9B7] via-[#FDFCDC] to-[#F07167] dark:from-[#00AFB9] dark:via-[#0081A7] dark:to-[#195A6B]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
@@ -51,7 +63,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <Card 
               key={index}
@@ -87,18 +99,23 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="flex items-center gap-2 border-primary/30 hover:bg-primary/10 transition-all duration-300"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                    Live Demo
-                  </Button>
+                  {project.liveUrl && (
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="flex items-center gap-2 border-primary/30 hover:bg-primary/10 transition-all duration-300"
+                      onClick={() => window.open(project.liveUrl, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      Live Demo
+                    </Button>
+                  )}
                   <Button 
                     variant="ghost" 
                     size="sm"
                     className="flex items-center gap-2 hover:bg-primary/10 transition-all duration-300"
+                    onClick={() => window.open(project.githubUrl, '_blank')}
+                    disabled={project.githubUrl === '#'}
                   >
                     <Github className="h-4 w-4" />
                     Code

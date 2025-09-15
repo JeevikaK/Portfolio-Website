@@ -1,71 +1,83 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, BookOpen, ExternalLink, Calendar } from "lucide-react";
+import { Award, BookOpen, ExternalLink, Calendar, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Certifications = () => {
   const certifications = [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
+      title: "Enterprise Design Thinking Practitioner",
+      issuer: "IBM",
+      date: "2024",
+      status: "Active",
+      description: "Acquired knowledge of applying Enterprise Design Thinking and its value",
+      skills: ["Design Thinking", "User Experience"],
+      url: "https://www.coursera.org/account/accomplishments/verify/276H4XNQGTCU"
+    },
+    {
+      title: "Convolutional Neural Networks",
+      issuer: "Coursera",
       date: "2023",
       status: "Active",
-      credentialId: "AWS-ASA-2023-001",
-      description: "Demonstrated expertise in designing distributed systems on AWS",
-      skills: ["Cloud Architecture", "AWS Services", "Security", "Scalability"]
+      credentialId: "276H4XNQGTCU",
+      description: "Concepts and applications of Convolutional Neural Networks",
+      skills: ["Digital Image Processing", "Machine Learning"],
+      url: "https://www.coursera.org/account/accomplishments/verify/276H4XNQGTCU"
     },
     {
-      title: "React Professional Developer",
-      issuer: "Meta",
+      title: "Advanced Learning Algorithms",
+      issuer: "Coursera",
       date: "2023",
       status: "Active", 
-      credentialId: "META-REACT-2023",
-      description: "Advanced proficiency in React development and best practices",
-      skills: ["React", "JavaScript", "Frontend Development", "Testing"]
+      credentialId: "MN2R3HGBXKGV",
+      description: "Advanced proficiency in applications of ML algorithms and best practices",
+      skills: ["Machine Learning", "Artificial Intelligence"],
+      url: "https://www.coursera.org/account/accomplishments/verify/MN2R3HGBXKGV"
     },
     {
-      title: "Google Cloud Professional",
+      title: "Perform Foundational Data, ML and AI Tasks on Google Cloud",
       issuer: "Google Cloud",
       date: "2022",
       status: "Active",
-      credentialId: "GCP-PRO-2022-789",
-      description: "Professional-level expertise in Google Cloud Platform",
-      skills: ["GCP", "Kubernetes", "DevOps", "Microservices"]
+      description: "Professional-level expertise in Google Cloud Platform to perform Data and ML tasks",
+      skills: ["GCP", "Kubernetes", "DevOps", "Microservices"],
+      url: "https://www.cloudskillsboost.google/public_profiles/f05ef982-4025-4dee-b437-d9b5e2b65f0f/badges/3455947?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+    },
+    {
+      title: "Python Data Structures",
+      issuer: "Coursera",
+      date: "2021",
+      status: "Active",
+      credentialId: "KRABXZ59U9GE",
+      description: "Professional-level expertise in python data structures",
+      skills: ["Python", "Data Structures and Algorithms"],
+      url: "https://www.coursera.org/account/accomplishments/certificate/KRABXZ59U9GE"
     }
   ];
 
   const publications = [
     {
-      title: "Modern React Patterns: Building Scalable Applications",
-      journal: "Web Development Quarterly",
-      date: "2023",
-      type: "Article",
-      url: "#",
-      description: "Exploring advanced React patterns and architectural decisions for large-scale applications",
-      coAuthors: ["Dr. Jane Smith", "Mike Johnson"]
-    },
-    {
-      title: "Serverless Architecture Best Practices",
-      journal: "Cloud Computing Today",
-      date: "2023",
+      title: "Foresight: Empowering Visually Impaired Individuals through Multimodal Generative AI",
+      journal: "IEEE",
+      date: "2025",
       type: "Research Paper",
-      url: "#",
-      description: "A comprehensive study on serverless deployment strategies and performance optimization",
-      coAuthors: ["Dr. Alex Chen"]
+      url: "https://ieeexplore.ieee.org/document/11118397",
+      description: "Workflow embodied in a mobile app that helps visually impaired individuals by combining vision, speech, and generative AI. It reduces AI hallucinations, improves accuracy, and even identifies 12% more information than baseline models.",
+      coAuthors: ["Owais Iqbal", "Prajwal B Mehendarkar", "Ridhiman Singh"]
     },
     {
-      title: "The Future of Frontend Development",
-      journal: "Tech Innovation Magazine",
-      date: "2022",
-      type: "Article",
-      url: "#",
-      description: "Analysis of emerging trends in frontend technologies and their impact on user experience",
-      coAuthors: []
+      title: "AuthEZ: A Multifaceted Identity Provider Service using Facial, Voice, and In-App Authentication",
+      journal: "IEEE",
+      date: "2024",
+      type: "Research Paper",
+      url: "https://ieeexplore.ieee.org/document/10923933",
+      description: "AuthEZ is an Identity Provider SDK that combines facial verification, voice verification, and in-app authentication techniques to provide a secure and user-friendly authentication experience. In-app verification, suitable for legacy devices, employs public key cryptography and RSA digital signatures through QR codes. Developers can seamlessly integrate these services into web applications, enhancing user experience and data protection.",
+      coAuthors: ["Owais Iqbal", "Prajwal B Mehendarkar", "Ridhiman Singh"]
     }
   ];
 
   return (
-    <section id="certifications" className="py-20 bg-secondary/30">
+    <section id="certifications" className="py-20 bg-gradient-to-br from-[#FDFCDC] via-[#FED9B7] to-[#00AFB9] dark:from-[#0081A7] dark:via-[#00AFB9] dark:to-[#195A6B]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-foreground">Certifications & Publications</h2>
@@ -86,13 +98,25 @@ const Certifications = () => {
               <Card key={index} className="hover:shadow-glow transition-all duration-300 border-primary/20">
                 <CardHeader>
                   <div className="flex items-start justify-between">
-                    <div>
+                    <div className="flex-1">
                       <CardTitle className="text-lg mb-2">{cert.title}</CardTitle>
                       <CardDescription className="text-primary font-medium">{cert.issuer}</CardDescription>
                     </div>
-                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                      {cert.status}
-                    </Badge>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                        {cert.status}
+                      </Badge>
+                      {cert.url && (
+                        <Button 
+                          variant="ghost" 
+                          size="icon" 
+                          className="hover:bg-primary/10 flex-shrink-0"
+                          onClick={() => window.open(cert.url, '_blank')}
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -100,8 +124,12 @@ const Certifications = () => {
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
                       <span>{cert.date}</span>
-                      <span>•</span>
-                      <span>ID: {cert.credentialId}</span>
+                      {cert.credentialId && (
+                        <>
+                          <span>•</span>
+                          <span>ID: {cert.credentialId}</span>
+                        </>
+                      )}
                     </div>
                     
                     <p className="text-sm text-foreground/80">{cert.description}</p>
@@ -118,10 +146,22 @@ const Certifications = () => {
               </Card>
             ))}
           </div>
+          {/* View More on LinkedIn Button */}
+          <div className="text-center mt-8">
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="bg-[#0077B5] hover:bg-[#005885] text-white border-[#0077B5] hover:border-[#005885] transition-all duration-300 hover:scale-105"
+              onClick={() => window.open('https://www.linkedin.com/in/jeevika-kiran-a0957b242/details/certifications/', '_blank')}
+            >
+              <Linkedin className="h-5 w-5 mr-2" />
+              View More on LinkedIn
+            </Button>
+          </div>
         </div>
 
         {/* Publications Section */}
-        <div>
+        <div className="mt-16">
           <div className="flex items-center gap-3 mb-8">
             <BookOpen className="h-8 w-8 text-primary" />
             <h3 className="text-3xl font-semibold text-foreground">Publications & Research</h3>
@@ -136,7 +176,12 @@ const Certifications = () => {
                       <CardTitle className="text-lg mb-2 leading-tight">{pub.title}</CardTitle>
                       <CardDescription className="text-primary font-medium">{pub.journal}</CardDescription>
                     </div>
-                    <Button variant="ghost" size="icon" className="hover:bg-primary/10 flex-shrink-0">
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="hover:bg-primary/10 flex-shrink-0"
+                      onClick={() => window.open(pub.url, '_blank')}
+                    >
                       <ExternalLink className="h-4 w-4" />
                     </Button>
                   </div>

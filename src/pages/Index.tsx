@@ -8,8 +8,11 @@ import Gallery from "@/components/Gallery";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Index = () => {
+  useSmoothScroll();
+
   return (
     <div className="min-h-screen">
       <Navigation />

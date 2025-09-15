@@ -31,14 +31,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-secondary">
+    <section id="contact" className="py-20 bg-gradient-to-br from-[#00AFB9] via-[#0081A7] to-[#195A6B] dark:from-[#003D4A] dark:via-[#00AFB9] dark:to-[#0081A7]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             Get In Touch
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Let's work together to bring your ideas to life
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Let's work together to bring ideas to life
           </p>
         </div>
 
@@ -50,8 +50,7 @@ const Contact = () => {
               </h3>
               <p className="text-foreground/80 mb-8 leading-relaxed">
                 I'm always interested in new opportunities and exciting projects. 
-                Whether you have a question or just want to say hi, I'll try my 
-                best to get back to you!
+                Whether you have a question or just want to say hi, I look forward to hearing from you!
               </p>
 
               <div className="space-y-6">
@@ -61,7 +60,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-muted-foreground">sarah@example.com</p>
+                    <p className="text-muted-foreground">jeevika.kiran@gmail.com</p>
                   </div>
                 </div>
 
@@ -71,7 +70,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Location</p>
-                    <p className="text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-muted-foreground">Los Angeles, CA</p>
                   </div>
                 </div>
 
@@ -81,7 +80,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+1 (213) 551-3288</p>
                   </div>
                 </div>
               </div>
@@ -139,7 +138,7 @@ const Contact = () => {
 
               <Button 
                 type="submit"
-                className="w-full bg-primary hover:bg-primary/90 shadow-soft transition-all duration-300 hover:scale-[1.02] flex items-center gap-2"
+                className="w-full bg-primary/70 hover:bg-primary/60 shadow-soft transition-all duration-300 hover:scale-[1.02] flex items-center gap-2"
               >
                 <Send className="h-4 w-4" />
                 Send Message
