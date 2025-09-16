@@ -1,13 +1,8 @@
-"use client";
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ExternalLink, Award, Calendar, Linkedin, BookOpen } from "lucide-react";
-import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const Certifications = () => {
-  const { ref, hasIntersected } = useIntersectionObserver();
   
   const certifications = [
     {
@@ -92,7 +87,7 @@ const Certifications = () => {
   ];
 
   return (
-    <section ref={ref} id="certifications" className={`py-20 bg-gradient-to-br from-[#FFEEDD] via-[#B8B8FF] to-[#9381FF] section-transition ${hasIntersected ? 'visible' : ''}`}>
+    <section id="certifications" className="py-20 bg-gradient-to-br from-[#FFEEDD] via-[#B8B8FF] to-[#9381FF]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-white">Certifications & Publications</h2>
@@ -122,14 +117,14 @@ const Certifications = () => {
                         {cert.status}
                       </Badge>
                       {cert.url && (
-                        <Button 
-                          variant="ghost" 
-                          size="icon" 
-                          className="hover:bg-primary/10 flex-shrink-0"
-                          onClick={() => window.open(cert.url, '_blank')}
+                        <a 
+                          href={cert.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center w-8 h-8 hover:bg-primary/10 flex-shrink-0 rounded-md transition-colors duration-200"
                         >
                           <ExternalLink className="h-4 w-4" />
-                        </Button>
+                        </a>
                       )}
                     </div>
                   </div>
@@ -163,15 +158,15 @@ const Certifications = () => {
           </div>
           {/* View More on LinkedIn Button */}
           <div className="text-center mt-8">
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="bg-[#9381FF] hover:bg-[#B8B8FF] text-white border-[#9381FF] hover:border-[#B8B8FF] transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('https://www.linkedin.com/in/jeevika-kiran-a0957b242/details/certifications/', '_blank')}
+            <a 
+              href="https://www.linkedin.com/in/jeevika-kiran-a0957b242/details/certifications/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#9381FF] hover:bg-[#B8B8FF] text-white border border-[#9381FF] hover:border-[#B8B8FF] rounded-md transition-all duration-300 hover:scale-105 font-medium"
             >
-              <Linkedin className="h-5 w-5 mr-2" />
+              <Linkedin className="h-5 w-5" />
               View more on LinkedIn
-            </Button>
+            </a>
           </div>
         </div>
 
@@ -191,14 +186,14 @@ const Certifications = () => {
                       <h3 className="text-lg mb-2 leading-tight font-semibold text-gray-800 group-hover:text-[#9381FF] transition-colors">{pub.title}</h3>
                       <p className="text-[#9381FF] font-medium">{pub.journal}</p>
                     </div>
-                    <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      className="hover:bg-[#B8B8FF]/20 text-[#9381FF] hover:scale-110 hover:rotate-12 transition-all duration-300 flex-shrink-0"
-                      onClick={() => window.open(pub.url, '_blank')}
+                    <a 
+                      href={pub.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-8 h-8 hover:bg-[#B8B8FF]/20 text-[#9381FF] hover:scale-110 hover:rotate-12 transition-all duration-300 flex-shrink-0 rounded-md"
                     >
                       <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    </a>
                   </div>
                 </div>
                 <div className="p-6 pt-0">

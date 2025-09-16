@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Section Transition Styles */
+.section-transition {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.section-hidden {
+  transform: translateY(30px);
+  opacity: 0.7;
+}
+
+.section-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 @import '../src/styles/section-transitions.css';
 
 @layer base {

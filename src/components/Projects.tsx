@@ -1,13 +1,9 @@
-"use client";
-
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const Projects = () => {
-  const { ref, hasIntersected } = useIntersectionObserver();
   
   const projects = [
     {
@@ -57,7 +53,7 @@ const Projects = () => {
   ];
 
   return (
-    <section ref={ref} id="projects" className={`py-20 bg-gradient-to-br from-[#B8B8FF] via-[#F8F7FF] to-[#FFEEDD] section-transition ${hasIntersected ? 'visible' : ''}`}>
+    <section id="projects" className="py-20 bg-gradient-to-br from-[#B8B8FF] via-[#F8F7FF] to-[#FFEEDD]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#9381FF]">
@@ -105,26 +101,27 @@ const Projects = () => {
 
                 <div className="flex gap-2">
                   {project.liveUrl && (
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="flex items-center gap-2 border-primary/30 hover:bg-primary/10 transition-all duration-300"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
+                    <a 
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-primary/30 rounded-md hover:bg-primary/10 transition-all duration-300 text-primary"
                     >
                       <ExternalLink className="h-4 w-4" />
                       Live Demo
-                    </Button>
+                    </a>
                   )}
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    className="flex items-center gap-2 hover:bg-primary/10 transition-all duration-300"
-                    onClick={() => window.open(project.githubUrl, '_blank')}
-                    disabled={project.githubUrl === '#'}
-                  >
-                    <Github className="h-4 w-4" />
-                    Code
-                  </Button>
+                  {project.githubUrl !== '#' && (
+                    <a 
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md hover:bg-primary/10 transition-all duration-300 text-primary"
+                    >
+                      <Github className="h-4 w-4" />
+                      Code
+                    </a>
+                  )}
                 </div>
               </div>
             </Card>

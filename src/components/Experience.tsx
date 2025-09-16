@@ -1,14 +1,8 @@
-"use client";
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CalendarDays, MapPin, ExternalLink, Award, TrendingUp, Briefcase } from "lucide-react";
-import { useState } from 'react';
-import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const Experience = () => {
-  const { ref, hasIntersected } = useIntersectionObserver();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const experiences = [
     {
@@ -41,7 +35,7 @@ const Experience = () => {
   ];
 
   return (
-    <section ref={ref} id="experience" className={`py-20 bg-gradient-to-br from-[#F8F7FF] via-[#FFEEDD] to-[#FFD8BE] section-transition ${hasIntersected ? 'visible' : ''}`}>
+    <section id="experience" className="py-20 bg-gradient-to-br from-[#F8F7FF] to-[#FFEEDD]">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full blur-3xl animate-float"></div>
@@ -68,8 +62,6 @@ const Experience = () => {
                 key={index}
                 className={`relative flex flex-col md:flex-row items-start md:items-center animate-slide-in`}
                 style={{animationDelay: `${index * 0.2}s`}}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
               >
                 {/* Date on the left */}
                 <div className="hidden md:block w-72 pr-8 text-right">
@@ -78,13 +70,13 @@ const Experience = () => {
                 </div>
 
                 {/* Timeline dot */}
-                <div className={`absolute left-6 md:left-80 w-4 h-4 bg-gradient-interactive rounded-full border-4 border-background transform md:-translate-x-1/2 z-10 transition-all duration-300 ${hoveredIndex === index ? 'scale-110 shadow-glow' : ''}`}>
+                <div className="absolute left-6 md:left-80 w-4 h-4 bg-gradient-interactive rounded-full border-4 border-background transform md:-translate-x-1/2 z-10 transition-all duration-300 hover:scale-110 hover:shadow-glow">
                   <div className="absolute inset-0 bg-gradient-interactive rounded-full animate-glow"></div>
                 </div>
 
                 {/* Content card - always on the right */}
                 <div className="w-full md:w-7/12 ml-16 md:ml-16">
-                  <Card className={`p-6 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-102 hover:-translate-y-1 group backdrop-blur-sm ${hoveredIndex === index ? 'shadow-xl scale-102' : ''}`}>
+                  <Card className="p-6 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-102 hover:-translate-y-1 group backdrop-blur-sm">
                     {/* Period badge - only show on mobile */}
                     <div className="flex items-center gap-2 mb-4 md:hidden">
                       <Badge className="bg-gradient-interactive text-white border-0 px-3 py-1">

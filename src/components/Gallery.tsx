@@ -1,8 +1,5 @@
-"use client";
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ExternalLink, Calendar, MapPin, Users, Award, Linkedin } from "lucide-react";
 
 const Gallery = () => {
@@ -89,14 +86,14 @@ const Gallery = () => {
                     {item.title}
                   </h3>
                   {item.link && (
-                    <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      className="hover:bg-[#B8B8FF]/20 text-[#9381FF] flex-shrink-0"
-                      onClick={() => window.open(item.link, '_blank')}
+                    <a 
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-8 h-8 hover:bg-[#B8B8FF]/20 text-[#9381FF] flex-shrink-0 rounded-md transition-colors duration-200"
                     >
                       <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    </a>
                   )}
                 </div>
                 
@@ -131,15 +128,15 @@ const Gallery = () => {
         </div>
 
         <div className="text-center mt-8">
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="bg-[#9381FF] hover:bg-[#B8B8FF] text-white border-[#9381FF] hover:border-[#B8B8FF] transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('https://www.linkedin.com/in/jeevika-kiran-a0957b242/recent-activity/all/', '_blank')}
+            <a 
+              href="https://www.linkedin.com/in/jeevika-kiran-a0957b242/recent-activity/all/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#9381FF] hover:bg-[#B8B8FF] text-white border border-[#9381FF] hover:border-[#B8B8FF] rounded-md transition-all duration-300 hover:scale-105 font-medium"
             >
-              <Linkedin className="h-5 w-5 mr-2" />
+              <Linkedin className="h-5 w-5" />
               View all posts on LinkedIn
-            </Button>
+            </a>
           </div>
       </div>
     </section>

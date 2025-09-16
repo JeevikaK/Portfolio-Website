@@ -1,15 +1,9 @@
-"use client";
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useState, useEffect } from 'react';
-import { Code, Database, Globe, Smartphone, Cloud, Brain, Zap, Cpu, Bot, Palette, Users, Server, Star } from "lucide-react";
-import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { Progress } from "@/components/ui/progress";
+import { Sparkles, Code, Database, Palette, Wrench, Cpu, Globe, Smartphone, Cloud, Brain, Bot, Zap, Star, Users, Server } from "lucide-react";
 
 const Skills = () => {
-  const { ref, hasIntersected } = useIntersectionObserver();
-  const [visibleSkills, setVisibleSkills] = useState<boolean[]>(new Array(6).fill(false));
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const skillCategories = [
     {
@@ -96,15 +90,9 @@ const Skills = () => {
     }
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setVisibleSkills(new Array(skillCategories.length).fill(true));
-    }, 300);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
-    <section ref={ref} id="skills" className={`py-20 bg-gradient-to-br from-[#FFEEDD] via-[#F8F7FF] to-[#B8B8FF] section-transition ${hasIntersected ? 'visible' : ''}`}>
+    <section id="skills" className="py-20 bg-gradient-to-br from-[#FFEEDD] via-[#F8F7FF] to-[#B8B8FF]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#9381FF]">
@@ -119,10 +107,8 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className={`relative overflow-hidden border border-[#B8B8FF]/30 shadow-lg hover:shadow-2xl transition-all duration-700 hover:scale-[1.02] group cursor-pointer bg-[#F8F7FF]/80 hover:bg-[#F8F7FF]/90 backdrop-blur-sm ${hoveredCard === index ? 'shadow-2xl scale-[1.02]' : ''}`}
+              className="relative overflow-hidden border border-[#B8B8FF]/30 shadow-lg hover:shadow-2xl transition-all duration-700 hover:scale-[1.02] group cursor-pointer bg-[#F8F7FF]/80 hover:bg-[#F8F7FF]/90 backdrop-blur-sm"
               style={{animationDelay: `${index * 0.1}s`}}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Animated background gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`}></div>
@@ -164,7 +150,7 @@ const Skills = () => {
                           <div 
                             className={`h-full bg-gradient-to-r ${category.gradient} rounded-full transition-all duration-1000 ease-out relative`}
                             style={{ 
-                              width: visibleSkills[index] ? `${skill.level}%` : '0%',
+                              width: `${skill.level}%`,
                               transitionDelay: `${(index * 0.1) + (skillIndex * 0.1)}s`
                             }}
                           >

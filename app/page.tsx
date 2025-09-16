@@ -9,6 +9,7 @@ import Gallery from '@/components/Gallery'
 import Certifications from '@/components/Certifications'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import SectionTransitions from '@/components/SectionTransitions'
 
 export const metadata: Metadata = {
   title: 'Jeevika Kiran - AI Engineer & Full Stack Developer Portfolio',
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="min-h-screen">
+      <SectionTransitions />
       <Navigation />
       <Hero />
       <About />

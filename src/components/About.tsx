@@ -1,12 +1,8 @@
-"use client";
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, GraduationCap, Code, Heart, Award, Brain, Database, Globe, Smartphone, Cloud, Zap, Bot, Cpu, Coffee, Calendar } from "lucide-react";
-import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const About = () => {
-  const { ref, hasIntersected } = useIntersectionObserver();
   
   const areasOfInterest = [
     {
@@ -42,7 +38,7 @@ const About = () => {
   ];
 
   return (
-    <section ref={ref} id="about" className={`py-20 bg-gradient-to-br from-[#F8F7FF] via-[#B8B8FF] to-[#9381FF] section-transition ${hasIntersected ? 'visible' : ''}`}>
+    <section id="about" className="py-20 bg-gradient-to-br from-[#9381FF] to-[#B8B8FF]">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-32 right-20 w-28 h-28 bg-gradient-accent rounded-full blur-3xl animate-float"></div>

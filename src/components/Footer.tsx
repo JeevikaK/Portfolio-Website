@@ -1,6 +1,3 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
@@ -16,30 +13,28 @@ const Footer = () => {
           </div>
           
           <div className="flex gap-6">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="hover:bg-primary/10 hover:text-primary transition-all duration-300"
-              onClick={() => window.open('https://github.com/JeevikaK', '_blank')}
+            <a 
+              href="https://github.com/JeevikaK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 rounded-md"
             >
               <Github className="h-5 w-5" />
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="hover:bg-primary/10 hover:text-primary transition-all duration-300"
-              onClick={() => window.open('https://www.linkedin.com/in/jeevika-kiran-a0957b242/', '_blank')}
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/jeevika-kiran-a0957b242/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 rounded-md"
             >
               <Linkedin className="h-5 w-5" />
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="hover:bg-primary/10 hover:text-primary transition-all duration-300"
-              onClick={() => window.open('mailto:jeevikakiran@gmail.com', '_blank')}
+            </a>
+            <a 
+              href="mailto:jeevika.kiran@gmail.com"
+              className="inline-flex items-center justify-center w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 rounded-md"
             >
               <Mail className="h-5 w-5" />
-            </Button>
+            </a>
           </div>
           
           <div className="flex items-center gap-2 text-muted-foreground">
