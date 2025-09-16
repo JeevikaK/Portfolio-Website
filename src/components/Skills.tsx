@@ -121,7 +121,7 @@ const Skills = () => {
                     {category.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:${category.gradient} transition-all duration-500">
+                    <h3 className="text-xl font-bold text-gray-800 group-hover:text-[#9381FF] transition-all duration-500">
                       {category.title}
                     </h3>
                     <div className="flex items-center gap-1 mt-1">
