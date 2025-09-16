@@ -35,6 +35,16 @@ const Certifications = () => {
       url: "https://www.coursera.org/account/accomplishments/verify/MN2R3HGBXKGV"
     },
     {
+      title: "Supervised Machine Learning Regression and Classification",
+      issuer: "Coursera",
+      date: "2022",
+      status: "Active", 
+      credentialId: "PBNLNCFKYYF6",
+      description: "Supervised learning techniques for regression and classification problems",
+      skills: ["Machine Learning", "Artificial Intelligence"],
+      url: "https://www.coursera.org/account/accomplishments/verify/PBNLNCFKYYF6"
+    },
+    {
       title: "Perform Foundational Data, ML and AI Tasks on Google Cloud",
       issuer: "Google Cloud",
       date: "2022",
