@@ -56,8 +56,7 @@ const About = () => {
             Passionate About Innovation
           </h2>
           <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Driven by curiosity and a love for problem-solving, I specialize in creating AI-powered solutions 
-            that make a real difference in people's lives.
+            Driven by curiosity and a love for problem-solving, I&apos;m passionate about creating intelligent solutions that make a real difference in people&apos;s lives.
           </p>
         </div>
 
@@ -65,14 +64,14 @@ const About = () => {
           <div className="space-y-6 animate-slide-in">
             <Card className="p-8 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm">
               <p className="text-base leading-relaxed text-gray-700 mb-6">
-              🎓 I'm pursuing an MS in Computer Science at the University of Southern California (USC), passionate about designing technology that has tangible impact. 
+              🎓 I&apos;m pursuing an MS in Computer Science at the University of Southern California (USC), passionate about designing technology that has tangible impact. 
               </p>
               <p className="text-base leading-relaxed text-gray-700 mb-6">
               🚀 I focus on building accessible, reliable, and efficient systems that solve real-world problems and enhance user experiences. My projects range from creating tools that simplify complex workflows to developing applications that empower users through intelligent, context-aware solutions. I enjoy bridging the gap between advanced technology and practical applications, turning innovative ideas into solutions people can actually use and benefit from.
               </p>
               <p className="text-base leading-relaxed text-gray-700 mb-6">
-                💡 When I'm not coding, you'll find me exploring new technologies, 
-                and experimenting with creative side projects. I enjoy blending problem-solving with curiosity, also while enjoying a good book with 
+                💡 When I&apos;m not coding, you&apos;ll find me exploring new technologies, 
+                I&apos;m always excited to take on new challenges and collaborate on innovative projects. I enjoy blending problem-solving with curiosity, also while enjoying a good book with 
                 a cup of coffee ☕.
               </p>
 

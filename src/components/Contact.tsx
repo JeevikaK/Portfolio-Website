@@ -12,7 +12,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Let's work together to bring ideas to life
+            Let&apos;s work together to bring ideas to life
           </p>
         </div>
 
@@ -20,10 +20,10 @@ const Contact = () => {
           <div className="space-y-8">
             <Card className="p-8 shadow-soft border-0 bg-card/50 backdrop-blur-sm">
               <h3 className="text-2xl font-semibold mb-6 text-foreground">
-                Let's Connect
+                Let&apos;s Connect
               </h3>
               <p className="text-foreground/80 mb-8 leading-relaxed">
-                I'm always interested in new opportunities and exciting projects. 
+                I&apos;m always interested in new opportunities and exciting projects. 
                 Whether you have a question or just want to say hi, I look forward to hearing from you!
               </p>
 

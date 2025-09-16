@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col items-center space-y-6">
           <div className="text-center mb-4">
             <p className="text-lg text-foreground mb-2">Thanks for stopping by!</p>
-            <p className="text-muted-foreground">Can't wait to hear from you and explore new opportunities together.</p>
+            <p className="text-muted-foreground">Can&apos;t wait to hear from you and explore new opportunities together.</p>
           </div>
           
           <div className="flex gap-6">

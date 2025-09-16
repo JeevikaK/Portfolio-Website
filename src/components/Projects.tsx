@@ -1,7 +1,8 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 const Projects = () => {
   
@@ -71,9 +72,11 @@ const Projects = () => {
               className="overflow-hidden shadow-soft border border-[#B8B8FF]/30 bg-[#F8F7FF]/80 backdrop-blur-sm hover:shadow-glow transition-all duration-300 hover:scale-[1.02] group w-full max-w-sm"
             >
               <div className="aspect-video overflow-hidden">
-                <img 
+                <Image 
                   src={project.image} 
                   alt={project.title}
+                  width={400}
+                  height={225}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>

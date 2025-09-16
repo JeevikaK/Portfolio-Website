@@ -1,6 +1,8 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Calendar, MapPin, Users, Award, Linkedin } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
+import { Calendar, MapPin, Users, Award, Linkedin } from "lucide-react";
 
 const Gallery = () => {
   const galleryItems = [
@@ -68,9 +70,11 @@ const Gallery = () => {
           {galleryItems.map((item, index) => (
             <Card key={index} className="overflow-hidden shadow-soft border border-[#B8B8FF]/30 bg-[#F8F7FF]/80 backdrop-blur-sm hover:shadow-glow transition-all duration-300 group">
               <div className="relative overflow-hidden">
-                <img 
+                <Image 
                   src={item.image} 
                   alt={item.title}
+                  width={400}
+                  height={192}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute top-4 right-4">

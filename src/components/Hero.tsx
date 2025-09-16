@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import HeroActions from "./HeroActions";
 
@@ -7,10 +10,12 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
-        <img 
+        <Image 
           src="/assets/hero-workspace.jpg" 
           alt="Workspace" 
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
       </div>
       
@@ -33,10 +38,12 @@ const Hero = () => {
             
             {/* Main image container */}
             <div className="relative w-72 h-72 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl z-10">
-              <img 
+              <Image 
                 src="/assets/profile.png" 
                 alt="Jeevika Kiran" 
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                priority
               />
             </div>
             
@@ -58,7 +65,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-gray-900 animate-scale-in">
-              Hi, I'm Jeevika
+              Hi, I&apos;m Jeevika
             </h1>
             <p className="text-lg md:text-xl mb-12 text-gray-700 leading-relaxed animate-fade-in" style={{animationDelay: '0.2s'}}>
               An AI enthusiast driven to create intelligent solutions that address real-world challenges. I create cutting-edge AI applications and streamline complex workflows to deliver impactful, user-centered experiences.

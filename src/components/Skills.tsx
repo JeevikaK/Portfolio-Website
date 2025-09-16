@@ -185,9 +185,7 @@ const Skills = () => {
               </div>
               
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Technology evolves rapidly, and I'm committed to staying current with the latest trends and best practices. 
-                Currently diving deep into <span className="font-semibold text-primary">Explainable AI (XAI)</span> with 
-                cross-modal attribution and counterfactual reasoning.
+                Whether you&apos;re building web applications, mobile apps, or AI-powered solutions, I&apos;m equipped with the tools and knowledge to bring your vision to life. Technology evolves rapidly, and I&apos;m committed to staying current with the latest trends and best practices. Currently diving deep into <span className="font-semibold text-primary">Explainable AI (XAI)</span> with cross-modal attribution and counterfactual reasoning.
               </p>
               
               <div className="grid md:grid-cols-3 gap-4 mb-6">
