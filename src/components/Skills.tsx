@@ -1,12 +1,15 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { Code2, Database, Globe, Palette, Server, Settings, Brain, Zap, Star } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { Code, Database, Globe, Smartphone, Cloud, Brain, Zap, Cpu, Bot, Palette, Users, Server, Star } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const Skills = () => {
+  const { ref, hasIntersected } = useIntersectionObserver();
+  const [visibleSkills, setVisibleSkills] = useState<boolean[]>(new Array(6).fill(false));
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [visibleSkills, setVisibleSkills] = useState<boolean[]>([]);
 
   const skillCategories = [
     {
@@ -67,7 +70,7 @@ const Skills = () => {
     },
     {
       title: "Development Tools",
-      icon: <Code2 className="h-6 w-6" />,
+      icon: <Code className="h-6 w-6" />,
       skills: [
         { name: "Git", level: 95 },
         { name: "VS Code", level: 98 },
@@ -89,13 +92,13 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-[#00AFB9] via-[#0081A7] to-[#195A6B] dark:from-[#003D4A] dark:via-[#00AFB9] dark:to-[#0081A7]">
+    <section ref={ref} id="skills" className={`py-20 bg-gradient-to-br from-[#FFEEDD] via-[#F8F7FF] to-[#B8B8FF] section-transition ${hasIntersected ? 'visible' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#9381FF]">
             Skills & Expertise
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             A comprehensive overview of my technical skills and areas of expertise across the full stack
           </p>
         </div>
@@ -104,7 +107,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className={`relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-700 hover:scale-[1.02] group cursor-pointer ${category.bgGradient} backdrop-blur-sm ${hoveredCard === index ? 'shadow-2xl scale-[1.02]' : ''}`}
+              className={`relative overflow-hidden border border-[#B8B8FF]/30 shadow-lg hover:shadow-2xl transition-all duration-700 hover:scale-[1.02] group cursor-pointer bg-[#F8F7FF]/80 hover:bg-[#F8F7FF]/90 backdrop-blur-sm ${hoveredCard === index ? 'shadow-2xl scale-[1.02]' : ''}`}
               style={{animationDelay: `${index * 0.1}s`}}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
@@ -114,7 +117,7 @@ const Skills = () => {
               
               <div className="relative p-6">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br ${category.gradient} text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                  <div className={`p-3 rounded-xl bg-gradient-to-br from-[#9381FF] to-[#B8B8FF] text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
                     {category.icon}
                   </div>
                   <div>
@@ -176,7 +179,7 @@ const Skills = () => {
             <div className="relative">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-                  <Zap className="h-6 w-6" />
+                  <Code className="h-6 w-6" />
                 </div>
                 <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Continuous Learning Journey

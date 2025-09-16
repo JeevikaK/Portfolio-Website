@@ -1,7 +1,13 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
-import { Heart, Coffee, Code, Sparkles, Brain, Cpu, Database, Globe, Zap, Bot, GraduationCap, Calendar, Award } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Sparkles, GraduationCap, Code, Heart, Award, Brain, Database, Globe, Smartphone, Cloud, Zap, Bot, Cpu, Coffee, Calendar } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const About = () => {
+  const { ref, hasIntersected } = useIntersectionObserver();
+  
   const areasOfInterest = [
     {
       icon: Brain,
@@ -10,33 +16,33 @@ const About = () => {
     },
     {
       icon: Bot,
-      title: "AI Applications",
-      description: "Building intelligent systems that solve real-world problems"
-    },
-    {
-      icon: Database,
-      title: "Data Analytics",
-      description: "Large-scale data processing and analytics pipelines"
+      title: "Computer Vision", 
+      description: "Image processing, object detection, and visual AI systems"
     },
     {
       icon: Cpu,
-      title: "Computer Vision",
-      description: "Image processing and visual recognition systems"
+      title: "AI Research",
+      description: "Explainable AI, cross-modal attribution, and counterfactual reasoning"
     },
     {
       icon: Globe,
-      title: "NLP & LLMs",
-      description: "Natural language processing and large language models"
+      title: "Web Development",
+      description: "Full-stack applications with modern frameworks and technologies"
+    },
+    {
+      icon: Database,
+      title: "Data Engineering",
+      description: "Big data processing, analytics pipelines, and cloud infrastructure"
     },
     {
       icon: Zap,
-      title: "Accessability",
-      description: "Technology that empowers through inclusive and accessible experiences."
+      title: "Innovation",
+      description: "Creating solutions that bridge technology and real-world impact"
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-[#FDFCDC] via-[#FED9B7] to-[#F07167] dark:from-[#0081A7] dark:via-[#00AFB9] dark:to-[#195A6B] relative overflow-hidden">
+    <section ref={ref} id="about" className={`py-20 bg-gradient-to-br from-[#F8F7FF] via-[#B8B8FF] to-[#9381FF] section-transition ${hasIntersected ? 'visible' : ''}`}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-32 right-20 w-28 h-28 bg-gradient-accent rounded-full blur-3xl animate-float"></div>
@@ -46,27 +52,29 @@ const About = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="h-5 w-5 text-primary animate-glow" />
-            <span className="text-primary font-medium">Get to know me</span>
+            <Sparkles className="h-5 w-5 text-white animate-glow" />
+            <span className="text-white font-medium">About Me</span>
+            <Sparkles className="h-5 w-5 text-white animate-glow" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            About Me
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Passionate About Innovation
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Passionate about creating innovative AI applications with cutting edge technology.
+          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Driven by curiosity and a love for problem-solving, I specialize in creating AI-powered solutions 
+            that make a real difference in people's lives.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="space-y-6 animate-slide-in">
-            <Card className="p-8 shadow-soft border-0 bg-gradient-card hover:shadow-interactive transition-all duration-500 hover:scale-105 group">
-              <p className="text-base leading-relaxed text-foreground/90 mb-6">
+            <Card className="p-8 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm">
+              <p className="text-base leading-relaxed text-gray-700 mb-6">
               🎓 I'm pursuing an MS in Computer Science at USC, passionate about designing technology that has tangible impact. 
               </p>
-              <p className="text-base leading-relaxed text-foreground/90 mb-6">
+              <p className="text-base leading-relaxed text-gray-700 mb-6">
               🚀 I focus on building accessible, reliable, and efficient systems that solve real-world problems and enhance user experiences. My projects range from creating tools that simplify complex workflows to developing applications that empower users through intelligent, context-aware solutions. I enjoy bridging the gap between advanced technology and practical applications, turning innovative ideas into solutions people can actually use and benefit from.
               </p>
-              <p className="text-base leading-relaxed text-foreground/90 mb-6">
+              <p className="text-base leading-relaxed text-gray-700 mb-6">
                 💡 When I'm not coding, you'll find me exploring new technologies, 
                 and experimenting with creative side projects. I enjoy blending problem-solving with curiosity, also while enjoying a good book with 
                 a cup of coffee ☕.
@@ -90,12 +98,12 @@ const About = () => {
           </div>
 
           <div className="space-y-8 animate-slide-in" style={{animationDelay: '0.2s'}}>
-            <Card className="p-8 shadow-soft border-0 bg-gradient-card hover:shadow-interactive transition-all duration-500 hover:scale-105 group">
+            <Card className="p-8 shadow-lg border-0 bg-white/90 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-interactive rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <GraduationCap className="h-6 w-6 text-white group-hover:animate-glow" />
                 </div>
-                <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300"> Education</h3>
+                <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300"> Education</h3>
               </div>
               
               <div className="space-y-6">
@@ -141,16 +149,15 @@ const About = () => {
               </div>
             </Card>
             
-            <Card className="p-8 shadow-soft border-0 bg-gradient-card hover:shadow-interactive transition-all duration-500 hover:scale-105 group">
+            <Card className="p-8 shadow-lg border-0 bg-white/90 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-interactive rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Code className="h-6 w-6 text-white group-hover:animate-glow" />
                 </div>
-                <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300"> My Journey</h3>
+                <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300"> My Journey</h3>
               </div>
               <p className="text-foreground/80 leading-relaxed">
-               Started with me solving DSA with Java (the best language ever) in school, then moved to JavaScript and then to Python. 🐍 What began as a love for problem-solving quickly grew into a passion for exploring technical concepts and using my laptop and creativity to build solutions that make a real impact. 💻✨
-              </p>
+              I first got into coding by solving DSA problems in Java (the best language ever, of course). From there, I branched into JavaScript and eventually Python 🐍. What started as a simple love for problem-solving soon grew into a deeper passion for exploring technical concepts and using creativity (plus a trusty laptop) to build solutions that create real impact.              </p>
             </Card>
           </div>
         </div>
@@ -176,7 +183,7 @@ const About = () => {
               return (
                 <Card 
                   key={index}
-                  className={`p-4 shadow-soft border-0 bg-gradient-card hover:shadow-interactive transition-all duration-500 hover:scale-105 group cursor-pointer animate-scale-in`}
+                  className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-700 hover:scale-[1.02] group cursor-pointer bg-white/90 hover:bg-white backdrop-blur-lg p-4"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
                   <div className="flex flex-col items-center text-center">

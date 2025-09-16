@@ -1,12 +1,16 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { ref, hasIntersected } = useIntersectionObserver();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-[#00AFB9] via-[#0081A7] to-[#195A6B] dark:from-[#003D4A] dark:via-[#00AFB9] dark:to-[#0081A7]">
+    <section ref={ref} id="contact" className={`py-20 bg-gradient-to-br from-[#9381FF] via-[#B8B8FF] to-[#F8F7FF] section-transition ${hasIntersected ? 'visible' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">

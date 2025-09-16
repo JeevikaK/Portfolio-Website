@@ -1,9 +1,14 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+"use client";
+
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, BookOpen, ExternalLink, Calendar, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ExternalLink, Award, Calendar, Linkedin, BookOpen } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const Certifications = () => {
+  const { ref, hasIntersected } = useIntersectionObserver();
+  
   const certifications = [
     {
       title: "Enterprise Design Thinking Practitioner",
@@ -87,11 +92,11 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-20 bg-gradient-to-br from-[#FDFCDC] via-[#FED9B7] to-[#00AFB9] dark:from-[#0081A7] dark:via-[#00AFB9] dark:to-[#195A6B]">
+    <section ref={ref} id="certifications" className={`py-20 bg-gradient-to-br from-[#FFEEDD] via-[#B8B8FF] to-[#9381FF] section-transition ${hasIntersected ? 'visible' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Certifications & Publications</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-white">Certifications & Publications</h2>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Professional certifications and published research showcasing continuous learning and thought leadership
           </p>
         </div>
@@ -99,18 +104,18 @@ const Certifications = () => {
         {/* Certifications Section */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <Award className="h-8 w-8 text-primary" />
-            <h3 className="text-3xl font-semibold text-foreground">Professional Certifications</h3>
+            <Award className="h-8 w-8 text-white" />
+            <h3 className="text-3xl font-semibold text-white">Professional Certifications</h3>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
-              <Card key={index} className="hover:shadow-glow transition-all duration-300 border-primary/20">
-                <CardHeader>
+              <Card key={index} className="hover:shadow-glow transition-all duration-300 border border-[#F8F7FF]/30 bg-[#F8F7FF]/90">
+                <div className="p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <CardTitle className="text-lg mb-2">{cert.title}</CardTitle>
-                      <CardDescription className="text-primary font-medium">{cert.issuer}</CardDescription>
+                      <h3 className="text-lg mb-2 font-semibold text-gray-800">{cert.title}</h3>
+                      <p className="text-[#9381FF] font-medium">{cert.issuer}</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
@@ -128,10 +133,10 @@ const Certifications = () => {
                       )}
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent>
+                </div>
+                <div className="p-6 pt-0">
                   <div className="space-y-4">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
                       <Calendar className="h-4 w-4" />
                       <span>{cert.date}</span>
                       {cert.credentialId && (
@@ -142,17 +147,17 @@ const Certifications = () => {
                       )}
                     </div>
                     
-                    <p className="text-sm text-foreground/80">{cert.description}</p>
+                    <p className="text-sm text-gray-700">{cert.description}</p>
                     
                     <div className="flex flex-wrap gap-2">
                       {cert.skills.map((skill, skillIndex) => (
-                        <Badge key={skillIndex} variant="outline" className="text-xs border-primary/30">
+                        <Badge key={skillIndex} variant="outline" className="text-xs border-[#9381FF]/30 text-gray-700">
                           {skill}
                         </Badge>
                       ))}
                     </div>
                   </div>
-                </CardContent>
+                </div>
               </Card>
             ))}
           </div>
@@ -161,11 +166,11 @@ const Certifications = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="bg-[#0077B5] hover:bg-[#005885] text-white border-[#0077B5] hover:border-[#005885] transition-all duration-300 hover:scale-105"
+              className="bg-[#9381FF] hover:bg-[#B8B8FF] text-white border-[#9381FF] hover:border-[#B8B8FF] transition-all duration-300 hover:scale-105"
               onClick={() => window.open('https://www.linkedin.com/in/jeevika-kiran-a0957b242/details/certifications/', '_blank')}
             >
               <Linkedin className="h-5 w-5 mr-2" />
-              View More on LinkedIn
+              View more on LinkedIn
             </Button>
           </div>
         </div>
@@ -173,50 +178,50 @@ const Certifications = () => {
         {/* Publications Section */}
         <div className="mt-16">
           <div className="flex items-center gap-3 mb-8">
-            <BookOpen className="h-8 w-8 text-primary" />
-            <h3 className="text-3xl font-semibold text-foreground">Publications & Research</h3>
+            <BookOpen className="h-8 w-8 text-white/80" />
+            <h3 className="text-3xl font-semibold text-white/80">Publications & Research</h3>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
             {publications.map((pub, index) => (
-              <Card key={index} className="hover:shadow-glow transition-all duration-300 border-primary/20">
-                <CardHeader>
+              <Card key={index} className="hover:shadow-glow hover:shadow-[#9381FF]/20 transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-[#B8B8FF]/30 hover:border-[#9381FF]/50 bg-gradient-to-br from-[#F8F7FF]/95 to-white/90 hover:from-[#F8F7FF] hover:to-[#B8B8FF]/20 backdrop-blur-sm group">
+                <div className="p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <CardTitle className="text-lg mb-2 leading-tight">{pub.title}</CardTitle>
-                      <CardDescription className="text-primary font-medium">{pub.journal}</CardDescription>
+                      <h3 className="text-lg mb-2 leading-tight font-semibold text-gray-800 group-hover:text-[#9381FF] transition-colors">{pub.title}</h3>
+                      <p className="text-[#9381FF] font-medium">{pub.journal}</p>
                     </div>
                     <Button 
                       variant="ghost" 
                       size="icon" 
-                      className="hover:bg-primary/10 flex-shrink-0"
+                      className="hover:bg-[#B8B8FF]/20 text-[#9381FF] hover:scale-110 hover:rotate-12 transition-all duration-300 flex-shrink-0"
                       onClick={() => window.open(pub.url, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4" />
                     </Button>
                   </div>
-                </CardHeader>
-                <CardContent>
+                </div>
+                <div className="p-6 pt-0">
                   <div className="space-y-4">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
                       <Calendar className="h-4 w-4" />
                       <span>{pub.date}</span>
                       <span>•</span>
-                      <Badge variant="outline" className="text-xs border-accent/50 bg-accent/10">
+                      <Badge variant="outline" className="text-xs border-[#9381FF]/30 bg-[#9381FF]/10 text-[#9381FF] group-hover:bg-[#9381FF] group-hover:text-white transition-all duration-300">
                         {pub.type}
                       </Badge>
                     </div>
                     
-                    <p className="text-sm text-foreground/80">{pub.description}</p>
+                    <p className="text-sm text-gray-700">{pub.description}</p>
                     
                     {pub.coAuthors.length > 0 && (
                       <div>
-                        <p className="text-xs text-muted-foreground mb-1">Co-authors:</p>
-                        <p className="text-sm text-foreground/70">{pub.coAuthors.join(", ")}</p>
+                        <p className="text-xs text-gray-500 mb-1">Co-authors:</p>
+                        <p className="text-sm text-gray-600">{pub.coAuthors.join(", ")}</p>
                       </div>
                     )}
                   </div>
-                </CardContent>
+                </div>
               </Card>
             ))}
           </div>

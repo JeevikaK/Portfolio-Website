@@ -1,9 +1,13 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CalendarDays, MapPin, Briefcase } from "lucide-react";
-import { useState } from "react";
+import { CalendarDays, MapPin, ExternalLink, Award, TrendingUp, Briefcase } from "lucide-react";
+import { useState } from 'react';
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const Experience = () => {
+  const { ref, hasIntersected } = useIntersectionObserver();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const experiences = [
@@ -30,14 +34,14 @@ const Experience = () => {
       company: "Volvo Digital & IT",
       location: "Bengaluru, KA, India",
       period: "Aug 2022 - Nov 2022",
-      description: "developed a web application POC that enabled unbiased candidate shortlisting by restricting inputs to job-relevant information, ensuring fair evaluation. The platform included single sign-on (SSO) and multi-level access controls across the admin and candidate portals, enhancing security and usability.",
+      description: "Developed a web application POC that enabled unbiased candidate shortlisting by restricting inputs to job-relevant information, ensuring fair evaluation. The platform included single sign-on (SSO) and multi-level access controls across the admin and candidate portals, enhancing security and usability.",
       technologies: ["React", "JavaScript", "SSO", "Node.js", "Git", "MongoDB", "Docker"],
       achievements: ["Streamlined the first-round screening process, reducing human effort by 50%", "Cut shortlisting time by 70%", "Improved documentation efficiency"]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-hero relative overflow-hidden">
+    <section ref={ref} id="experience" className={`py-20 bg-gradient-to-br from-[#F8F7FF] via-[#FFEEDD] to-[#FFD8BE] section-transition ${hasIntersected ? 'visible' : ''}`}>
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full blur-3xl animate-float"></div>
@@ -46,11 +50,11 @@ const Experience = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#9381FF]">
             Experience Timeline
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and the amazing companies I've worked with
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            My professional journey and key contributions across different roles
           </p>
         </div>
 
@@ -69,8 +73,8 @@ const Experience = () => {
               >
                 {/* Date on the left */}
                 <div className="hidden md:block w-72 pr-8 text-right">
-                  <div className="text-2xl font-bold text-primary mb-2">{exp.period}</div>
-                  <div className="text-muted-foreground">{exp.location}</div>
+                  <div className="text-lg font-semibold text-[#9381FF]">{exp.period}</div>
+                  <div className="text-base text-gray-600">{exp.location}</div>
                 </div>
 
                 {/* Timeline dot */}
@@ -80,7 +84,7 @@ const Experience = () => {
 
                 {/* Content card - always on the right */}
                 <div className="w-full md:w-7/12 ml-16 md:ml-16">
-                  <Card className={`p-6 shadow-soft border-0 bg-gradient-card hover:shadow-interactive transition-all duration-500 hover:scale-105 group ${hoveredIndex === index ? 'shadow-interactive scale-105' : ''}`}>
+                  <Card className={`p-6 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm ${hoveredIndex === index ? 'shadow-xl scale-105' : ''}`}>
                     {/* Period badge - only show on mobile */}
                     <div className="flex items-center gap-2 mb-4 md:hidden">
                       <Badge className="bg-gradient-interactive text-white border-0 px-3 py-1">
