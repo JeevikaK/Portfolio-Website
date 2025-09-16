@@ -13,15 +13,29 @@ const Skills = () => {
 
   const skillCategories = [
     {
+      title: "Programming Languages",
+      icon: <Globe className="h-6 w-6" />,
+      skills: [
+        { name: "Python", level: 95 },
+        { name: "Java", level: 90 },
+        { name: "C/C++", level: 85 },
+        { name: "JavaScript", level: 92 },
+        { name: "TypeScript", level: 95 },
+        { name: "SQL", level: 92 }
+      ],
+      gradient: "from-blue-500 to-cyan-500",
+      bgGradient: "bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20"
+    },
+    {
       title: "Frontend Development",
       icon: <Globe className="h-6 w-6" />,
       skills: [
         { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Next.js", level: 85 },
+        { name: "Next.js", level: 90 },
         { name: "Tailwind CSS", level: 92 },
-        { name: "JavaScript", level: 95 },
-        { name: "HTML5/CSS3", level: 98 }
+        { name: "Bootstrap", level: 95 },
+        { name: "HTML5/CSS3", level: 98 },
+        { name: "IBM Carbon Components", level: 85 }
       ],
       gradient: "from-blue-500 to-cyan-500",
       bgGradient: "bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20"
@@ -30,12 +44,10 @@ const Skills = () => {
       title: "Backend Development", 
       icon: <Server className="h-6 w-6" />,
       skills: [
-        { name: "Python", level: 95 },
+        { name: "Flask", level: 95 },
         { name: "Django", level: 88 },
         { name: "Node.js", level: 85 },
-        { name: "FastAPI", level: 82 },
-        { name: "Java", level: 80 },
-        { name: "C/C++", level: 75 }
+        { name: "FastAPI", level: 82 }
       ],
       gradient: "from-green-500 to-emerald-500",
       bgGradient: "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20"
@@ -58,11 +70,11 @@ const Skills = () => {
       title: "Database & Cloud",
       icon: <Database className="h-6 w-6" />,
       skills: [
-        { name: "PostgreSQL", level: 85 },
+        { name: "Microsoft/Oracle SQL", level: 85 },
         { name: "MongoDB", level: 80 },
         { name: "Microsoft Azure", level: 78 },
         { name: "Google Cloud", level: 75 },
-        { name: "Redis", level: 70 },
+        { name: "IBM Cloud", level: 70 },
         { name: "SQLite", level: 90 }
       ],
       gradient: "from-orange-500 to-red-500",

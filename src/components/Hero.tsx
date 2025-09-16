@@ -76,7 +76,7 @@ const Hero = () => {
               Hi, I'm Jeevika
             </h1>
             <p className="text-lg md:text-xl mb-12 text-gray-700 leading-relaxed animate-fade-in" style={{animationDelay: '0.2s'}}>
-              AI enthusiast driven to create intelligent solutions that address real-world challenges, I create cutting-edge AI applications and streamline complex workflows to deliver impactful, user-centered experiences.
+              An AI enthusiast driven to create intelligent solutions that address real-world challenges. I create cutting-edge AI applications and streamline complex workflows to deliver impactful, user-centered experiences.
             </p>
             
             <div className="flex gap-4 justify-center lg:justify-start flex-wrap animate-fade-in mb-8" style={{animationDelay: '0.4s'}}>

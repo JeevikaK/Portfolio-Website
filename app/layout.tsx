@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster'
 import { Toaster as Sonner } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { ReactNode } from 'react'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -121,6 +122,9 @@ export default function RootLayout({
             <Sonner />
           </TooltipProvider>
         </ThemeProvider>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   )

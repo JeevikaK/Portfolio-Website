@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { trackContactSubmission } from "../../lib/analytics";
 
 const Contact = () => {
   const { ref, hasIntersected } = useIntersectionObserver();
@@ -37,6 +38,7 @@ const Contact = () => {
           title: "Message sent!",
           description: "Thank you for reaching out. I'll get back to you soon.",
         });
+        trackContactSubmission(true);
         setFormData({ name: '', email: '', message: '' });
       } else {
         toast({
@@ -44,6 +46,7 @@ const Contact = () => {
           description: data.error || "Failed to send message. Please try again.",
           variant: "destructive",
         });
+        trackContactSubmission(false);
       }
     } catch (error) {
       console.error('Contact form error:', error);
@@ -52,6 +55,7 @@ const Contact = () => {
         description: "Failed to send message. Please try again.",
         variant: "destructive",
       });
+      trackContactSubmission(false);
     }
   };
 

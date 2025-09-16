@@ -69,7 +69,7 @@ const About = () => {
           <div className="space-y-6 animate-slide-in">
             <Card className="p-8 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm">
               <p className="text-base leading-relaxed text-gray-700 mb-6">
-              🎓 I'm pursuing an MS in Computer Science at USC, passionate about designing technology that has tangible impact. 
+              🎓 I'm pursuing an MS in Computer Science at the University of Southern California (USC), passionate about designing technology that has tangible impact. 
               </p>
               <p className="text-base leading-relaxed text-gray-700 mb-6">
               🚀 I focus on building accessible, reliable, and efficient systems that solve real-world problems and enhance user experiences. My projects range from creating tools that simplify complex workflows to developing applications that empower users through intelligent, context-aware solutions. I enjoy bridging the gap between advanced technology and practical applications, turning innovative ideas into solutions people can actually use and benefit from.
