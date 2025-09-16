@@ -78,13 +78,13 @@ const Experience = () => {
                 </div>
 
                 {/* Timeline dot */}
-                <div className={`absolute left-6 md:left-80 w-4 h-4 bg-gradient-interactive rounded-full border-4 border-background transform md:-translate-x-1/2 z-10 transition-all duration-300 ${hoveredIndex === index ? 'scale-150 shadow-glow' : ''}`}>
+                <div className={`absolute left-6 md:left-80 w-4 h-4 bg-gradient-interactive rounded-full border-4 border-background transform md:-translate-x-1/2 z-10 transition-all duration-300 ${hoveredIndex === index ? 'scale-110 shadow-glow' : ''}`}>
                   <div className="absolute inset-0 bg-gradient-interactive rounded-full animate-glow"></div>
                 </div>
 
                 {/* Content card - always on the right */}
                 <div className="w-full md:w-7/12 ml-16 md:ml-16">
-                  <Card className={`p-6 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm ${hoveredIndex === index ? 'shadow-xl scale-105' : ''}`}>
+                  <Card className={`p-6 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-102 hover:-translate-y-1 group backdrop-blur-sm ${hoveredIndex === index ? 'shadow-xl scale-102' : ''}`}>
                     {/* Period badge - only show on mobile */}
                     <div className="flex items-center gap-2 mb-4 md:hidden">
                       <Badge className="bg-gradient-interactive text-white border-0 px-3 py-1">
@@ -132,7 +132,7 @@ const Experience = () => {
                         <Badge 
                           key={tech}
                           variant="secondary"
-                          className={`bg-primary/10 text-primary hover:bg-gradient-interactive hover:text-white transition-all duration-300 transform hover:scale-110 animate-scale-in`}
+                          className={`bg-primary/10 text-primary hover:bg-gradient-interactive hover:text-gray-800 transition-all duration-300 transform hover:scale-105 animate-scale-in`}
                           style={{animationDelay: `${(index * 0.2) + (i * 0.1)}s`}}
                         >
                           {tech}

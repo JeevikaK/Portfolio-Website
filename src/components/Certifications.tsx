@@ -184,7 +184,7 @@ const Certifications = () => {
           
           <div className="grid md:grid-cols-2 gap-6">
             {publications.map((pub, index) => (
-              <Card key={index} className="hover:shadow-glow hover:shadow-[#9381FF]/20 transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-[#B8B8FF]/30 hover:border-[#9381FF]/50 bg-gradient-to-br from-[#F8F7FF]/95 to-white/90 hover:from-[#F8F7FF] hover:to-[#B8B8FF]/20 backdrop-blur-sm group">
+              <Card key={index} className="hover:shadow-glow hover:shadow-[#9381FF]/20 transition-all duration-500 hover:scale-102 hover:-translate-y-1 border border-[#B8B8FF]/30 hover:border-[#9381FF]/50 bg-gradient-to-br from-[#F8F7FF]/95 to-white/90 hover:from-[#F8F7FF] hover:to-[#B8B8FF]/20 backdrop-blur-sm group">
                 <div className="p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
