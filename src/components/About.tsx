@@ -45,7 +45,7 @@ const About = () => {
         <div className="absolute bottom-32 left-20 w-32 h-32 bg-gradient-primary rounded-full blur-3xl animate-float" style={{animationDelay: '1.5s'}}></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Sparkles className="h-5 w-5 text-white animate-glow" />
@@ -60,9 +60,9 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           <div className="space-y-6 animate-slide-in">
-            <Card className="p-8 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm">
+            <Card className="p-4 sm:p-6 lg:p-8 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm overflow-hidden">
               <p className="text-base leading-relaxed text-gray-700 mb-6">
               🎓 I&apos;m pursuing an MS in Computer Science at the University of Southern California (USC), passionate about designing technology that has tangible impact. 
               </p>
@@ -93,7 +93,7 @@ const About = () => {
           </div>
 
           <div className="space-y-8 animate-slide-in" style={{animationDelay: '0.2s'}}>
-            <Card className="p-8 shadow-lg border-0 bg-white/90 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm">
+            <Card className="p-4 sm:p-6 lg:p-8 shadow-lg border-0 bg-white/90 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm overflow-hidden">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-interactive rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <GraduationCap className="h-6 w-6 text-white group-hover:animate-glow" />
@@ -144,7 +144,7 @@ const About = () => {
               </div>
             </Card>
             
-            <Card className="p-8 shadow-lg border-0 bg-white/90 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm">
+            <Card className="p-4 sm:p-6 lg:p-8 shadow-lg border-0 bg-white/90 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm overflow-hidden">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-interactive rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Code className="h-6 w-6 text-white group-hover:animate-glow" />
@@ -172,13 +172,13 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 max-w-6xl mx-auto px-2 sm:px-0">
             {areasOfInterest.map((area, index) => {
               const IconComponent = area.icon;
               return (
                 <Card 
                   key={index}
-                  className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-700 hover:scale-[1.02] group cursor-pointer bg-white/90 hover:bg-white backdrop-blur-lg p-4"
+                  className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-700 hover:scale-[1.02] group cursor-pointer bg-white/90 hover:bg-white backdrop-blur-lg p-3 sm:p-4 w-full max-w-none"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
                   <div className="flex flex-col items-center text-center">
