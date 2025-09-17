@@ -27,17 +27,17 @@ const Hero = () => {
         <div className="absolute bottom-20 right-20 w-18 h-18 bg-gradient-secondary rounded-full blur-2xl animate-float opacity-50" style={{animationDelay: '0.5s'}}></div>
       </div>
       
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center min-h-screen relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-center min-h-screen relative z-10">
         {/* Profile Image */}
         <div className="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
           <div className="relative animate-fade-in flex items-center justify-center">
             {/* Outer decorative rings */}
-            <div className="absolute w-[28rem] h-[28rem] rounded-full border-2 border-[#9381FF]/20 animate-spin-slow"></div>
-            <div className="absolute w-96 h-96 rounded-full border border-[#B8B8FF]/40"></div>
-            <div className="absolute w-80 h-80 rounded-full border border-[#9381FF]/30"></div>
+            <div className="absolute w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full border-2 border-[#9381FF]/20 animate-spin-slow"></div>
+            <div className="absolute w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border border-[#B8B8FF]/40"></div>
+            <div className="absolute w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full border border-[#9381FF]/30"></div>
             
             {/* Main image container */}
-            <div className="relative w-72 h-72 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl z-10">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl z-10">
               <Image 
                 src="/assets/profile.png" 
                 alt="Jeevika Kiran" 
@@ -64,10 +64,10 @@ const Hero = () => {
               <Sparkles className="h-5 w-5 text-gray-800" />
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-gray-900 animate-scale-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 lg:mb-8 text-gray-900 animate-scale-in">
               Hi, I&apos;m Jeevika
             </h1>
-            <p className="text-lg md:text-xl mb-12 text-gray-700 leading-relaxed animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <p className="text-base sm:text-lg md:text-xl mb-8 lg:mb-12 text-gray-700 leading-relaxed animate-fade-in px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
               An AI enthusiast driven to create intelligent solutions that address real-world challenges. I create cutting-edge AI applications and streamline complex workflows to deliver impactful, user-centered experiences.
             </p>
             

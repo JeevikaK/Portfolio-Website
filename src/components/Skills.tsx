@@ -175,11 +175,11 @@ const Skills = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-pulse"></div>
             
             <div className="relative">
-              <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="flex flex-col items-center justify-center gap-3 mb-6">
                 <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white">
                   <Code className="h-6 w-6" />
                 </div>
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center">
                   Continuous Learning Journey
                 </h3>
               </div>

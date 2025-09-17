@@ -42,7 +42,7 @@ const Experience = () => {
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-accent rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#9381FF]">
             Experience Timeline
@@ -52,11 +52,11 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative overflow-hidden">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-80 top-0 bottom-0 w-0.5 bg-gradient-primary transform md:-translate-x-0.5"></div>
+          <div className="absolute left-4 sm:left-6 md:left-80 top-0 bottom-0 w-0.5 bg-gradient-primary transform md:-translate-x-0.5"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-12 overflow-hidden">
             {experiences.map((exp, index) => (
               <div 
                 key={index}
@@ -70,38 +70,38 @@ const Experience = () => {
                 </div>
 
                 {/* Timeline dot */}
-                <div className="absolute left-6 md:left-80 w-4 h-4 bg-gradient-interactive rounded-full border-4 border-background transform md:-translate-x-1/2 z-10 transition-all duration-300 hover:scale-110 hover:shadow-glow">
+                <div className="absolute left-2 sm:left-4 md:left-80 w-4 h-4 bg-gradient-interactive rounded-full border-4 border-background transform md:-translate-x-1/2 z-10 transition-all duration-300 hover:scale-110 hover:shadow-glow">
                   <div className="absolute inset-0 bg-gradient-interactive rounded-full animate-glow"></div>
                 </div>
 
                 {/* Content card - always on the right */}
-                <div className="w-full md:w-7/12 ml-16 md:ml-16">
-                  <Card className="p-6 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-102 hover:-translate-y-1 group backdrop-blur-sm">
+                <div className="w-full md:w-7/12 ml-6 sm:ml-8 md:ml-16 pr-2 sm:pr-4 md:pr-0 max-w-[calc(100vw-3rem)] sm:max-w-none">
+                  <Card className="p-3 sm:p-4 md:p-6 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-102 hover:-translate-y-1 group backdrop-blur-sm w-full overflow-hidden">
                     {/* Period badge - only show on mobile */}
-                    <div className="flex items-center gap-2 mb-4 md:hidden">
-                      <Badge className="bg-gradient-interactive text-white border-0 px-3 py-1">
+                    <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-4 md:hidden">
+                      <Badge className="bg-gradient-interactive text-white border-0 px-2 py-1 text-xs">
                         <CalendarDays className="h-3 w-3 mr-1" />
                         {exp.period}
                       </Badge>
-                      <Badge variant="outline" className="border-primary/30 text-primary">
+                      <Badge variant="outline" className="border-primary/30 text-primary px-2 py-1 text-xs">
                         <MapPin className="h-3 w-3 mr-1" />
-                        {exp.location}
+                        <span className="truncate max-w-[120px]">{exp.location}</span>
                       </Badge>
                     </div>
 
                     {/* Job title and company */}
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                         {exp.title}
                       </h3>
-                      <div className="flex items-center gap-2 text-primary font-semibold">
-                        <Briefcase className="h-4 w-4" />
-                        <span>{exp.company}</span>
+                      <div className="flex items-center gap-2 text-primary font-semibold text-sm sm:text-base">
+                        <Briefcase className="h-4 w-4 flex-shrink-0" />
+                        <span className="break-words">{exp.company}</span>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-foreground/80 mb-4 leading-relaxed">
+                    <p className="text-sm sm:text-base text-foreground/80 mb-4 leading-relaxed">
                       {exp.description}
                     </p>
 
@@ -119,7 +119,7 @@ const Experience = () => {
                     </div>
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {exp.technologies.map((tech, i) => (
                         <Badge 
                           key={tech}
