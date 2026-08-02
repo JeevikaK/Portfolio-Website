@@ -1,82 +1,86 @@
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
-import { Sparkles } from "lucide-react";
+import { ArrowDown, MapPin } from "lucide-react";
+import landingImage from "../../Images/LandingPageImage.jpeg";
 import HeroActions from "./HeroActions";
 
 const Hero = () => {
-
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 pt-16">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <Image 
-          src="/assets/hero-workspace.jpg" 
-          alt="Workspace" 
+    <section
+      id="home"
+      aria-labelledby="hero-title"
+      className="hero-landing relative isolate min-h-[100svh] overflow-hidden bg-[#03080d] text-white"
+    >
+      <div className="hero-photo-frame absolute inset-y-0 left-0 right-0 lg:left-[20%] lg:-right-[20%]">
+        <Image
+          src={landingImage}
+          alt="Jeevika working beside a panoramic window overlooking a green landscape"
           fill
-          className="object-cover"
+          sizes="100vw"
+          className="hero-image object-cover object-[23%_center] lg:object-center"
+          quality={95}
           priority
         />
       </div>
-      
-      {/* Floating decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-20 h-20 bg-gradient-primary rounded-full blur-2xl animate-float opacity-60"></div>
-        <div className="absolute top-40 right-32 w-16 h-16 bg-gradient-accent rounded-full blur-2xl animate-float opacity-50" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-32 left-32 w-24 h-24 bg-gradient-interactive rounded-full blur-2xl animate-float opacity-40" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-20 right-20 w-18 h-18 bg-gradient-secondary rounded-full blur-2xl animate-float opacity-50" style={{animationDelay: '0.5s'}}></div>
-      </div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-center h-full relative z-10">
-        {/* Profile Image */}
-        <div className="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
-          <div className="relative animate-fade-in flex items-center justify-center">
-            {/* Outer decorative rings */}
-            <div className="absolute w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border-2 border-[#9381FF]/20 animate-spin-slow"></div>
-            <div className="absolute w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full border border-[#B8B8FF]/40"></div>
-            <div className="absolute w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full border border-[#9381FF]/30"></div>
-            
-            {/* Main image container */}
-            <div className="relative w-32 h-32 sm:w-48 sm:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl z-10">
-              <Image 
-                src="/assets/profile.png" 
-                alt="Jeevika Kiran" 
-                fill
-                className="object-cover"
-                priority
-              />
+
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,7,12,.98)_0%,rgba(2,8,14,.88)_24%,rgba(2,8,14,.46)_51%,rgba(2,8,14,.14)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,5,10,.55)_0%,transparent_32%,transparent_66%,rgba(0,5,10,.86)_100%)]" />
+      <div className="hero-grain absolute inset-0 opacity-[0.1]" />
+
+      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1536px] flex-col px-6 sm:px-10 lg:px-[5.5%]">
+        <div className="flex flex-1 items-center pb-44 pt-28 sm:pb-40 sm:pt-36 lg:pb-36 lg:pt-40">
+          <div className="hero-copy max-w-[525px] lg:-translate-y-20">
+            <p className="hero-reveal text-[14px] font-normal tracking-[0.045em] text-[#5874ff] sm:text-[16px]">
+              Hi, I&apos;m
+            </p>
+
+            <h1
+              id="hero-title"
+              className="hero-reveal mt-2.5 text-[clamp(2.3rem,4.2vw,3.7rem)] font-semibold leading-[1.04] tracking-[-0.04em]"
+              style={{ animationDelay: "90ms" }}
+            >
+              Jeevika Kiran
+            </h1>
+
+            <p
+              className="hero-reveal mt-4 text-[14px] font-medium leading-tight text-white/70 sm:text-[17px]"
+              style={{ animationDelay: "160ms" }}
+            >
+              Computer Science Graduate Student
+            </p>
+
+            <p
+              className="hero-reveal mt-6 max-w-[490px] text-[13px] font-light leading-[1.75] text-white/68 sm:text-[16px]"
+              style={{ animationDelay: "230ms" }}
+            >
+              Passionate about AI, Systems and building impactful products that
+              solve real-world problems.
+            </p>
+
+            <div className="hero-reveal" style={{ animationDelay: "300ms" }}>
+              <HeroActions />
             </div>
-            
-            {/* Additional decorative elements */}
-            <div className="absolute w-4 h-4 bg-[#9381FF] rounded-full top-8 right-12 animate-pulse"></div>
-            <div className="absolute w-3 h-3 bg-[#B8B8FF] rounded-full bottom-12 left-8 animate-pulse" style={{animationDelay: '1s'}}></div>
-            <div className="absolute w-2 h-2 bg-[#FFD8BE] rounded-full top-16 left-16 animate-pulse" style={{animationDelay: '2s'}}></div>
           </div>
         </div>
 
-        {/* Content */}
-        <div className="lg:w-1/2 text-center lg:text-left">
-          <div className="animate-fade-in">
-            {/* Welcome Message */}
-            <div className="flex items-center justify-center lg:justify-start gap-2 mb-4 sm:mb-6 lg:mb-8">
-              <Sparkles className="h-5 w-5 text-gray-800" />
-              <span className="text-gray-800 font-medium text-lg">Welcome to my portfolio</span>
-              <Sparkles className="h-5 w-5 text-gray-800" />
-            </div>
-            
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 text-gray-900 animate-scale-in">
-              Hi, I&apos;m Jeevika
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 lg:mb-10 text-gray-700 leading-relaxed animate-fade-in px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
-              <span className="block sm:hidden">
-                An AI enthusiast driven to create intelligent solutions that address real-world challenges.
-              </span>
-              <span className="hidden sm:block">
-                An AI enthusiast driven to create intelligent solutions that address real-world challenges. I create cutting-edge AI applications and streamline complex workflows to deliver impactful, user-centered experiences.
-              </span>
+        <div className="absolute bottom-8 left-6 right-6 flex items-end justify-between sm:bottom-10 sm:left-10 sm:right-10 lg:bottom-[6.5%] lg:left-[5.5%] lg:right-[5.5%]">
+          <div className="hidden sm:block">
+            <p className="mb-4 text-[11px] font-normal uppercase tracking-[0.16em] text-white/70">
+              Let&apos;s connect
             </p>
-            
-            <HeroActions />
+            <HeroActions socialOnly />
+          </div>
+
+          <a
+            href="#about"
+            className="group absolute bottom-0 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2.5 text-[10px] font-light uppercase tracking-[0.18em] text-white/65 transition-colors hover:text-white lg:flex"
+          >
+            Scroll to explore
+            <ArrowDown className="h-6 w-6 transition-transform duration-300 group-hover:translate-y-1.5" strokeWidth={1.1} />
+          </a>
+
+          <div className="ml-auto flex items-center gap-2 text-[12px] font-light text-white/75 sm:text-[13px]">
+            <MapPin className="h-[18px] w-[18px] text-white" strokeWidth={1.5} />
+            <span>Los Angeles, CA</span>
           </div>
         </div>
       </div>

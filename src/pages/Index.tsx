@@ -5,7 +5,6 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Gallery from "@/components/Gallery";
-import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
@@ -22,7 +21,6 @@ const Index = () => {
       <Experience />
       <Projects />
       <Gallery />
-      <Certifications />
       <Contact />
       <Footer />
     </div>

@@ -1,200 +1,108 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Sparkles, GraduationCap, Code, Heart, Award, Brain, Database, Globe, Smartphone, Cloud, Zap, Bot, Cpu, Coffee, Calendar } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Box, BrainCircuit, Code2, Linkedin, Pencil } from "lucide-react";
+import aboutImage from "../../Images/AboutPageImage.jpeg";
+import BotanicalBackdrop from "./SectionBotanicals";
+
+const focusAreas = [
+  {
+    icon: Code2,
+    title: "Developer",
+    description: "Building web applications and digital solutions.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "AI & ML",
+    description: "Exploring intelligent systems and machine learning.",
+  },
+  {
+    icon: Box,
+    title: "Systems",
+    description: "Designing scalable and reliable architectures.",
+  },
+  {
+    icon: Pencil,
+    title: "Products",
+    description: "Creating user-focused products that make an impact.",
+  },
+];
 
 const About = () => {
-  
-  const areasOfInterest = [
-    {
-      icon: Brain,
-      title: "Machine Learning",
-      description: "Deep learning, neural networks, and AI model optimization"
-    },
-    {
-      icon: Bot,
-      title: "Computer Vision", 
-      description: "Image processing, object detection, and visual AI systems"
-    },
-    {
-      icon: Cpu,
-      title: "AI Research",
-      description: "Explainable AI, cross-modal attribution, and counterfactual reasoning"
-    },
-    {
-      icon: Globe,
-      title: "Web Development",
-      description: "Full-stack applications with modern frameworks and technologies"
-    },
-    {
-      icon: Database,
-      title: "Data Engineering",
-      description: "Big data processing, analytics pipelines, and cloud infrastructure"
-    },
-    {
-      icon: Zap,
-      title: "Innovation",
-      description: "Creating solutions that bridge technology and real-world impact"
-    }
-  ];
-
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-[#9381FF] to-[#B8B8FF]">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-32 right-20 w-28 h-28 bg-gradient-accent rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-32 left-20 w-32 h-32 bg-gradient-primary rounded-full blur-3xl animate-float" style={{animationDelay: '1.5s'}}></div>
-      </div>
+    <section id="about" aria-labelledby="about-title" className="relative isolate min-h-[100svh] overflow-hidden bg-[#f4f0e6] text-[#1b1b19]">
+      <div className="grid min-h-[100svh] lg:grid-cols-[30%_70%]">
+        <div className="relative min-h-[68svh] overflow-hidden bg-[#171714] lg:min-h-[100svh]">
+          <Image
+            src={aboutImage}
+            alt="Jeevika Kiran standing in a library"
+            fill
+            sizes="(min-width: 1024px) 30vw, 100vw"
+            className="origin-bottom scale-[1.2] object-cover object-[35%_center]"
+            quality={92}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,12,8,.18),transparent_45%,rgba(14,12,8,.42))]" />
 
-      <div className="container mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="h-5 w-5 text-white animate-glow" />
-            <span className="text-white font-medium">About Me</span>
-            <Sparkles className="h-5 w-5 text-white animate-glow" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Passionate About Innovation
-          </h2>
-          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Driven by curiosity and a love for problem-solving, I&apos;m passionate about creating intelligent solutions that make a real difference in people&apos;s lives.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
-          <div className="space-y-6 animate-slide-in">
-            <Card className="p-4 sm:p-6 lg:p-8 shadow-lg border border-[#B8B8FF]/30 bg-[#F8F7FF]/90 hover:bg-[#F8F7FF] hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm overflow-hidden">
-              <p className="text-base leading-relaxed text-gray-700 mb-6">
-              🎓 I&apos;m pursuing an MS in Computer Science at the University of Southern California (USC), passionate about designing technology that has tangible impact. 
-              </p>
-              <p className="text-base leading-relaxed text-gray-700 mb-6">
-              🚀 I focus on building accessible, reliable, and efficient systems that solve real-world problems and enhance user experiences. My projects range from creating tools that simplify complex workflows to developing applications that empower users through intelligent, context-aware solutions. I enjoy bridging the gap between advanced technology and practical applications, turning innovative ideas into solutions people can actually use and benefit from.
-              </p>
-              <p className="text-base leading-relaxed text-gray-700 mb-6">
-                💡 When I&apos;m not coding, you&apos;ll find me exploring new technologies, 
-                I&apos;m always excited to take on new challenges and collaborate on innovative projects. I enjoy blending problem-solving with curiosity, also while enjoying a good book with 
-                a cup of coffee ☕.
-              </p>
-
-              <div className="flex gap-6 text-muted-foreground">
-                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
-                  <Heart className="h-5 w-5 text-primary group-hover:animate-glow" />
-                  <span>Design</span>
-                </div>
-                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
-                  <Coffee className="h-5 w-5 text-primary group-hover:animate-glow" />
-                  <span>Coffee</span>
-                </div>
-                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
-                  <Code className="h-5 w-5 text-primary group-hover:animate-glow" />
-                  <span>Clean Code</span>
-                </div>
-              </div>
-            </Card>
-          </div>
-
-          <div className="space-y-8 animate-slide-in" style={{animationDelay: '0.2s'}}>
-            <Card className="p-4 sm:p-6 lg:p-8 shadow-lg border-0 bg-white/90 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm overflow-hidden">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-interactive rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <GraduationCap className="h-6 w-6 text-white group-hover:animate-glow" />
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300"> Education</h3>
-              </div>
-              
-              <div className="space-y-6">
-                {/* Master's Degree */}
-                <div className="border-l-4 border-primary/30 pl-6 hover:border-primary transition-colors duration-300">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-foreground mb-1">Master of Science in Computer Science</h4>
-                      <p className="text-primary font-medium">University of Southern California</p>
-                    </div>
-                    <div className="flex flex-col md:items-end mt-2 md:mt-0">
-                      <div className="flex items-center gap-2 text-muted-foreground mb-1">
-                        <Calendar className="h-4 w-4" />
-                        <span className="text-sm">2025 - 2027</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-primary">
-                        <Award className="h-4 w-4" />
-                        <span className="text-sm font-medium">GPA: Not available yet</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bachelor's Degree */}
-                <div className="border-l-4 border-primary/30 pl-6 hover:border-primary transition-colors duration-300">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-foreground mb-1">Bachelor of Engineering in Information Science</h4>
-                      <p className="text-primary font-medium">Ramaiah Institute of Technology</p>
-                    </div>
-                    <div className="flex flex-col md:items-end mt-2 md:mt-0">
-                      <div className="flex items-center gap-2 text-muted-foreground mb-1">
-                        <Calendar className="h-4 w-4" />
-                        <span className="text-sm">2020 - 2024</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-primary">
-                        <Award className="h-4 w-4" />
-                        <span className="text-sm font-medium">GPA: 9.31/10.0</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-            
-            <Card className="p-4 sm:p-6 lg:p-8 shadow-lg border-0 bg-white/90 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 group backdrop-blur-sm overflow-hidden">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-interactive rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Code className="h-6 w-6 text-white group-hover:animate-glow" />
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300"> My Journey</h3>
-              </div>
-              <p className="text-foreground/80 leading-relaxed">
-              I first got into coding by solving DSA problems in Java (the best language ever, of course). From there, I branched into JavaScript and eventually Python 🐍. What started as a simple love for problem-solving soon grew into a deeper passion for exploring technical concepts and using creativity (plus a trusty laptop) to build solutions that create real impact.              </p>
-            </Card>
+          <div className="absolute bottom-10 left-8 hidden items-center gap-4 text-white lg:flex">
+            <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-light uppercase tracking-[0.26em] text-white/65">
+              Let&apos;s connect
+            </span>
+            <a
+              href="https://www.linkedin.com/in/jeevika-kiran-a0957b242/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Connect with Jeevika on LinkedIn"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/45 transition-colors hover:border-white hover:bg-white hover:text-[#1b1b19]"
+            >
+              <Linkedin className="h-[18px] w-[18px]" strokeWidth={1.7} />
+            </a>
           </div>
         </div>
 
-        {/* Areas of Interest Section */}
-        <div className="mt-20">
-          <div className="text-center mb-12 animate-fade-in">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Sparkles className="h-5 w-5 text-primary animate-glow" />
-              <span className="text-primary font-medium">What drives me</span>
-            </div>
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Areas of Interest
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Exploring the frontiers of AI and technology to create meaningful impact
+        <div className="about-paper relative flex min-h-[100svh] flex-col overflow-hidden px-6 pb-12 pt-24 sm:px-10 lg:px-[7.5%] lg:pb-14 lg:pt-[21.5vh]">
+          <BotanicalBackdrop variant="about" />
+
+          <div className="relative z-10 max-w-[680px]">
+            <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-[#a67c52]">
+              About me
             </p>
+            <h2
+              id="about-title"
+              className="mt-5 text-[clamp(2.6rem,4.8vw,4.15rem)] font-light leading-[1.05] tracking-[-0.045em]"
+            >
+              I&apos;m Jeevika Kiran
+            </h2>
+            <span className="mt-7 block h-px w-10 bg-[#a67c52]" />
+            <p className="mt-6 max-w-[590px] text-[15px] font-light leading-[1.9] text-[#282824]/82 sm:text-[16px]">
+              Computer Science graduate student passionate about AI, systems and
+              building impactful products that solve real-world problems. I love
+              turning ideas into clean, scalable and thoughtful code.
+            </p>
+
+            <a
+              href="#experience"
+              className="group mt-7 inline-flex h-[52px] min-w-[194px] items-center justify-between bg-[#191917] px-7 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#a67c52]"
+            >
+              My story
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.4} />
+            </a>
           </div>
 
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 max-w-6xl mx-auto px-2 sm:px-0">
-            {areasOfInterest.map((area, index) => {
-              const IconComponent = area.icon;
-              return (
-                <Card 
-                  key={index}
-                  className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-700 hover:scale-[1.02] group cursor-pointer bg-white/90 hover:bg-white backdrop-blur-lg p-3 sm:p-4 w-full max-w-none"
-                  style={{animationDelay: `${index * 0.1}s`}}
-                >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-gradient-interactive rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="h-6 w-6 text-white group-hover:animate-glow" />
-                    </div>
-                    <h4 className="text-sm font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
-                      {area.title}
-                    </h4>
-                    <p className="text-muted-foreground text-xs leading-relaxed">
-                      {area.description}
-                    </p>
-                  </div>
-                </Card>
-              );
-            })}
+          <div className="relative z-10 mt-14 grid gap-4 sm:grid-cols-2 xl:mt-auto xl:grid-cols-4">
+            {focusAreas.map(({ icon: Icon, title, description }) => (
+              <article
+                key={title}
+                className="group min-h-[255px] rounded-[14px] border border-[#8c887e]/30 bg-white/12 p-6 backdrop-blur-[1px] transition-all duration-300 hover:-translate-y-1 hover:border-[#a67c52]/60 hover:bg-white/28"
+              >
+                <div className="grid h-[52px] w-[52px] place-items-center rounded-[13px] bg-[#e7dfd1] text-[#23231f] transition-colors group-hover:bg-[#d9c8b2]">
+                  <Icon className="h-[23px] w-[23px]" strokeWidth={1.5} />
+                </div>
+                <h3 className="mt-6 text-[13px] font-semibold uppercase tracking-[0.12em]">
+                  {title}
+                </h3>
+                <p className="mt-4 text-[13px] font-light leading-[1.7] text-[#32322e]/76">
+                  {description}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </div>

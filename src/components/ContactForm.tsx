@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
@@ -64,9 +63,9 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="space-y-2">
-        <label htmlFor="name" className="text-sm font-medium text-foreground">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="space-y-2.5">
+        <label htmlFor="name" className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#49453e]">
           Name
         </label>
         <Input
@@ -75,13 +74,13 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="border-primary/20 focus:border-primary transition-colors duration-300"
+          className="h-12 rounded-none border-0 border-b border-[#837e73]/35 bg-transparent px-0 text-[13px] shadow-none transition-colors placeholder:text-[#68635b]/45 focus-visible:border-[#8f6848] focus-visible:ring-0"
           placeholder="Your name"
         />
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="email" className="text-sm font-medium text-foreground">
+      <div className="space-y-2.5">
+        <label htmlFor="email" className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#49453e]">
           Email
         </label>
         <Input
@@ -91,13 +90,13 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="border-primary/20 focus:border-primary transition-colors duration-300"
+          className="h-12 rounded-none border-0 border-b border-[#837e73]/35 bg-transparent px-0 text-[13px] shadow-none transition-colors placeholder:text-[#68635b]/45 focus-visible:border-[#8f6848] focus-visible:ring-0"
           placeholder="your.email@example.com"
         />
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-foreground">
+      <div className="space-y-2.5">
+        <label htmlFor="message" className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#49453e]">
           Message
         </label>
         <Textarea
@@ -106,19 +105,19 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           required
-          rows={5}
-          className="border-primary/20 focus:border-primary transition-colors duration-300 resize-none"
+          rows={4}
+          className="resize-none rounded-none border-0 border-b border-[#837e73]/35 bg-transparent px-0 text-[13px] shadow-none transition-colors placeholder:text-[#68635b]/45 focus-visible:border-[#8f6848] focus-visible:ring-0"
           placeholder="Tell me about your project..."
         />
       </div>
 
-      <Button 
+      <button
         type="submit"
-        className="w-full bg-primary/70 hover:bg-primary/60 shadow-soft transition-all duration-300 hover:scale-[1.02] flex items-center gap-2"
+        className="group flex h-[52px] w-full items-center justify-between bg-[#1e1f1b] px-6 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#8d6645]"
       >
-        <Send className="h-4 w-4" />
         Send Message
-      </Button>
+        <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
+      </button>
     </form>
   );
 };
