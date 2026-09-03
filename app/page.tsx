@@ -10,13 +10,13 @@ import Footer from '@/components/Footer'
 import SectionTransitions from '@/components/SectionTransitions'
 
 export const metadata: Metadata = {
-  title: 'Jeevika Kiran - AI Engineer & Full Stack Developer Portfolio',
-  description: 'Explore the portfolio of Jeevika Kiran, an AI engineer and full-stack developer specializing in machine learning, computer vision, and intelligent web applications.',
+  title: 'Jeevika Kiran - AI & Software Engineer Portfolio',
+  description: 'Portfolio of Jeevika Kiran, an AI and software engineer building agentic AI tools, scalable intelligent systems, multimodal ML applications and robotics research.',
   openGraph: {
-    title: 'Jeevika Kiran - AI Engineer & Full Stack Developer Portfolio',
-    description: 'Explore the portfolio of Jeevika Kiran, an AI engineer and full-stack developer specializing in machine learning, computer vision, and intelligent web applications.',
+    title: 'Jeevika Kiran - AI & Software Engineer Portfolio',
+    description: 'Agentic AI, scalable intelligent systems, multimodal machine learning and robotics research.',
     type: 'website',
-    url: 'https://jeevikakiran.dev',
+    url: 'https://jeevikakiran.com',
   },
 }
 

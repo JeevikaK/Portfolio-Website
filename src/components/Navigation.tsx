@@ -63,7 +63,7 @@ const Navigation = () => {
           }`}
           aria-label="Back to home"
         >
-          JK<span className="text-[#5471ff]">.</span>
+          JK<span className="text-[#d18a74]">.</span>
         </button>
 
         <div className="hidden items-center gap-8 lg:flex xl:gap-10">
@@ -79,7 +79,7 @@ const Navigation = () => {
               {item.label}
               {activeSection === item.id && (
                 item.id === "home" ? (
-                  <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#4666ff]" />
+                  <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#c77c66]" />
                 ) : (
                   <span className="absolute bottom-0 left-1/2 h-px w-9 -translate-x-1/2 bg-current" />
                 )
@@ -104,7 +104,7 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`overflow-hidden border-t border-white/10 bg-[#030910]/96 transition-[max-height,opacity] duration-300 lg:hidden ${
+        className={`overflow-hidden border-t border-white/10 bg-[#0d0908]/96 transition-[max-height,opacity] duration-300 lg:hidden ${
           isMobileMenuOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >

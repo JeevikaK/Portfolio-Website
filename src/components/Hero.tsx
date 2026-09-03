@@ -2,13 +2,14 @@ import Image from "next/image";
 import { ArrowDown, MapPin } from "lucide-react";
 import landingImage from "../../Images/LandingPageImage.jpeg";
 import HeroActions from "./HeroActions";
+import BotanicalBackdrop from "./SectionBotanicals";
 
 const Hero = () => {
   return (
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="hero-landing relative isolate min-h-[100svh] overflow-hidden bg-[#03080d] text-white"
+      className="hero-landing relative isolate min-h-[100svh] overflow-hidden bg-[#0b0807] text-white"
     >
       <div className="hero-photo-frame absolute inset-y-0 left-0 right-0 lg:left-[20%] lg:-right-[20%]">
         <Image
@@ -22,41 +23,46 @@ const Hero = () => {
         />
       </div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,7,12,.98)_0%,rgba(2,8,14,.88)_24%,rgba(2,8,14,.46)_51%,rgba(2,8,14,.14)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,5,10,.55)_0%,transparent_32%,transparent_66%,rgba(0,5,10,.86)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,7,6,.98)_0%,rgba(15,9,7,.88)_24%,rgba(15,9,7,.46)_51%,rgba(15,9,7,.14)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,6,5,.55)_0%,transparent_32%,transparent_66%,rgba(10,6,5,.86)_100%)]" />
       <div className="hero-grain absolute inset-0 opacity-[0.1]" />
+      <BotanicalBackdrop variant="hero" />
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1536px] flex-col px-6 sm:px-10 lg:px-[5.5%]">
         <div className="flex flex-1 items-center pb-44 pt-28 sm:pb-40 sm:pt-36 lg:pb-36 lg:pt-40">
           <div className="hero-copy max-w-[525px] lg:-translate-y-20">
-            <p className="hero-reveal text-[14px] font-normal tracking-[0.045em] text-[#5874ff] sm:text-[16px]">
-              Hi, I&apos;m
+            <p className="text-[14px] font-normal tracking-[0.045em] text-[#d18a74] sm:text-[16px]">
+              <span className="hero-type-line hero-type-greeting">
+                <span className="hero-type-text">Hi, I&apos;m</span>
+              </span>
             </p>
 
             <h1
               id="hero-title"
-              className="hero-reveal mt-2.5 text-[clamp(2.3rem,4.2vw,3.7rem)] font-semibold leading-[1.04] tracking-[-0.04em]"
-              style={{ animationDelay: "90ms" }}
+              className="mt-2.5 text-[clamp(2.3rem,4.2vw,3.7rem)] font-light leading-[1.04] tracking-[-0.04em]"
             >
-              Jeevika Kiran
+              <span className="hero-type-line hero-type-name">
+                <span className="hero-type-text">Jeevika Kiran</span>
+              </span>
             </h1>
 
             <p
-              className="hero-reveal mt-4 text-[14px] font-medium leading-tight text-white/70 sm:text-[17px]"
-              style={{ animationDelay: "160ms" }}
+              className="hero-reveal hero-after-type mt-4 text-[14px] font-medium leading-tight text-white/70 sm:text-[17px]"
+              style={{ animationDelay: "2050ms" }}
             >
-              Computer Science Graduate Student
+              AI &amp; Software Engineer <span className="mx-1.5 text-[#d18a74]">·</span> USC MSCS
             </p>
 
             <p
-              className="hero-reveal mt-6 max-w-[490px] text-[13px] font-light leading-[1.75] text-white/68 sm:text-[16px]"
-              style={{ animationDelay: "230ms" }}
+              className="hero-reveal hero-after-type mt-6 max-w-[490px] text-[13px] font-light leading-[1.75] text-white/68 sm:text-[16px]"
+              style={{ animationDelay: "2130ms" }}
             >
-              Passionate about AI, Systems and building impactful products that
-              solve real-world problems.
+              I build intelligent developer tools, scalable AI systems and
+              multimodal applications, bringing together industry engineering and
+              collaborative research to create technology that matters.
             </p>
 
-            <div className="hero-reveal" style={{ animationDelay: "300ms" }}>
+            <div className="hero-reveal hero-after-type" style={{ animationDelay: "2210ms" }}>
               <HeroActions />
             </div>
           </div>

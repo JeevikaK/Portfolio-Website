@@ -8,7 +8,9 @@ import {
   Code2,
   ExternalLink,
   Github,
+  Glasses,
   Layers3,
+  ScanFace,
   ScanEye,
   ShieldCheck,
   Users,
@@ -21,11 +23,53 @@ type Filter = (typeof filters)[number];
 
 const projects = [
   {
+    title: "Deepfake Detection",
+    category: "AI & ML" as const,
+    description:
+      "A multimodal deepfake detection system that fuses visual artifacts, audio authenticity and lip-sync alignment into one per-video probability, reaching 0.9993 ROC-AUC and 98.67% validation accuracy on FakeAVCeleb.",
+    image: "/assets/projects/deepfake-detection-stock-v2.jpg",
+    imageAlt: "Audio and video editing timelines representing multimodal deepfake analysis",
+    technologies: [
+      "PyTorch",
+      "EfficientNet-B0",
+      "Wav2Vec2",
+      "SyncNet",
+      "MTCNN",
+      "OpenCV",
+    ],
+    githubUrl: "https://github.com/JeevikaK/Deepfake-Detection/",
+    icon: ScanFace,
+  },
+  {
+    title: "Life Lens",
+    category: "AI & ML" as const,
+    description:
+      "An AI-guided VR therapy platform that lets therapists design multi-stage sessions and delivers them on Meta Quest through immersive 360° environments, Gemini Live voice guidance and intelligent scene transitions.",
+    image: "/assets/projects/life-lens-stock-v2.jpg",
+    imageAlt: "Virtual-reality headset and tracking sensor used for an immersive therapy session",
+    technologies: [
+      "Gemini Live",
+      "WebXR",
+      "Three.js",
+      "React",
+      "FastAPI",
+      "Meta Quest",
+    ],
+    liveUrl: "https://www.youtube.com/watch?v=kNfriew4CGc",
+    primaryLabel: "Watch demo",
+    secondaryUrl:
+      "https://www.kaggle.com/competitions/ucla-gemini-api-hackathon/writeups/lifelens#3430653",
+    secondaryLabel: "Kaggle write-up",
+    githubUrl: "https://github.com/JeevikaK/Life-Lens",
+    icon: Glasses,
+  },
+  {
     title: "Foresight",
     category: "AI & ML" as const,
     description:
       "Foresight is an open-source accessibility accelerator for visually impaired users, integrating ShareGPT4V for visual analysis, Detectron2 for object grounding, and Gemma 7B for improved accuracy. With speech-to-text and text-to-speech interaction, it reduces hallucinations and identifies 12% more useful information than baseline models, delivering reliable, context-aware assistance.",
-    image: "/assets/Foresight.jpeg",
+    image: "/assets/projects/foresight-mobile-stock-v3.jpg",
+    imageAlt: "Mobile phone representing Foresight's accessible on-device visual assistance",
     technologies: [
       "Generative AI",
       "Detectron2",
@@ -46,7 +90,8 @@ const projects = [
     category: "Systems" as const,
     description:
       "AuthEZ is a passwordless identity provider SDK that combines SSO, facial verification with liveness checks, voice embeddings and RSA cryptographic signatures for secure, seamless access.",
-    image: "/assets/AuthEZ.png",
+    image: "/assets/projects/authez-stock.jpg",
+    imageAlt: "Finger entering a device passcode, representing secure passwordless authentication",
     technologies: [
       "Identity Provider",
       "Facenet",
@@ -66,7 +111,8 @@ const projects = [
     category: "Web Development" as const,
     description:
       "A mental-health surveillance and assessment platform for teens and students, with personalized music recommendations and AI-powered assistance.",
-    image: "/assets/memoirs.jpg",
+    image: "/assets/projects/memoirs-stock.jpg",
+    imageAlt: "Person journaling beside a smartphone, representing Memoirs' digital wellness tools",
     technologies: ["React", "TypeScript", "Next.js"],
     githubUrl: "https://github.com/JeevikaK/MindMap/tree/MindMap",
     icon: Layers3,
@@ -76,7 +122,8 @@ const projects = [
     category: "Web Development" as const,
     description:
       "A collaborative platform for students to showcase their skills and projects, participate in club activities and connect with peers across colleges.",
-    image: "/assets/StudentBuzz.jpeg",
+    image: "/assets/projects/student-buzz-stock.jpg",
+    imageAlt: "Two students collaborating with a laptop and notebook outdoors",
     technologies: ["Django", "ReactJS", "SQLite"],
     githubUrl: "https://github.com/JeevikaK/Student-Buzz",
     icon: Users,
@@ -86,7 +133,8 @@ const projects = [
     category: "AI & ML" as const,
     description:
       "An automated vehicle-theft detection system using moving-object detection and barcode scanning to identify suspicious movement and alert parking personnel.",
-    image: "/assets/carparkingdetection.png",
+    image: "/assets/projects/car-theft-stock.jpg",
+    imageAlt: "Dark car in a monitored parking garage, representing automated theft detection",
     technologies: [
       "Python",
       "OpenCV",
@@ -101,7 +149,9 @@ const projects = [
     category: "Systems" as const,
     description:
       "A bias-aware recruitment platform with faceless hiring and role-based candidate and admin portals.",
-    image: "/assets/valunique.jpg",
+    image: "/assets/projects/valunique-stock-v2.jpg",
+    imageAlt: "Resume, pen and laptop representing Valunique's bias-aware hiring workflow",
+    imagePosition: "18% center",
     technologies: ["ReactJS", "NodeJS", "Microsoft SQL"],
     githubUrl: "https://github.com/JeevikaK/Valunique-Backend",
     icon: Code2,
@@ -139,7 +189,7 @@ const Projects = () => {
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#b28a32]">
             Projects
           </p>
-          <h2 className="font-serif text-[clamp(2.5rem,4.3vw,4.25rem)] font-normal leading-[0.98] tracking-[-0.045em] text-[#151511]">
+          <h2 className="text-[clamp(2.5rem,4.3vw,4.25rem)] font-light leading-[0.98] tracking-[-0.045em] text-[#151511]">
             My Projects
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-sm font-light leading-6 text-[#58574f] sm:text-[15px]">
@@ -201,12 +251,15 @@ const Projects = () => {
                 >
                   <Image
                     src={project.image}
-                    alt={`Preview of the ${project.title} project`}
+                    alt={project.imageAlt}
                     fill
                     sizes="(max-width: 639px) 84vw, (max-width: 1023px) 48vw, 25vw"
-                    className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
+                    quality={85}
+                    className="object-cover saturate-[0.82] contrast-[1.03] transition duration-700 ease-out group-hover:scale-[1.035]"
+                    style={{ objectPosition: project.imagePosition ?? "center" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/5 to-black/90" />
+                  <div className="absolute inset-0 bg-[#9b704a]/[0.05] mix-blend-color" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/14 via-black/5 to-black/90" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
                   <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-[10px] bg-[#f4f0e5] text-[#1a1a16] shadow-sm">
@@ -227,7 +280,7 @@ const Projects = () => {
                     <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-white/70">
                       {project.category}
                     </p>
-                    <h3 className="mt-2 max-w-[90%] font-serif text-[29px] font-normal leading-[1.02] tracking-[-0.035em] sm:text-[32px]">
+                    <h3 className="mt-2 max-w-[90%] text-[29px] font-light leading-[1.02] tracking-[-0.035em] sm:text-[32px]">
                       {project.title}
                     </h3>
                     <p className="mt-3 line-clamp-3 text-[12px] font-light leading-[1.55] text-white/75">
@@ -236,15 +289,28 @@ const Projects = () => {
                     <p className="mt-4 truncate text-[9px] font-medium uppercase tracking-[0.14em] text-white/55">
                       {project.technologies.join("  ·  ")}
                     </p>
-                    <a
-                      href={primaryUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-flex items-center gap-2 border-b border-white/40 pb-1 text-[10px] font-semibold uppercase tracking-[0.2em] transition hover:border-white"
-                    >
-                      View project
-                      <ExternalLink className="h-3 w-3" strokeWidth={1.5} />
-                    </a>
+                    <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+                      <a
+                        href={primaryUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 border-b border-white/40 pb-1 text-[10px] font-semibold uppercase tracking-[0.2em] transition hover:border-white"
+                      >
+                        {project.primaryLabel ?? "View project"}
+                        <ExternalLink className="h-3 w-3" strokeWidth={1.5} />
+                      </a>
+                      {project.secondaryUrl && (
+                        <a
+                          href={project.secondaryUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 border-b border-white/30 pb-1 text-[9px] font-medium uppercase tracking-[0.16em] text-white/70 transition hover:border-white hover:text-white"
+                        >
+                          {project.secondaryLabel}
+                          <ExternalLink className="h-3 w-3" strokeWidth={1.5} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </article>
               );

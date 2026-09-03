@@ -17,8 +17,8 @@ const Skills = () => {
         { name: "TypeScript", level: 95 },
         { name: "SQL", level: 92 }
       ],
-      gradient: "from-blue-500 to-cyan-500",
-      bgGradient: "bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20"
+      gradient: "from-rose-500 to-orange-400",
+      bgGradient: "bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-950/20 dark:to-orange-950/20"
     },
     {
       title: "Frontend Development",
@@ -31,8 +31,8 @@ const Skills = () => {
         { name: "HTML5/CSS3", level: 98 },
         { name: "IBM Carbon Components", level: 85 }
       ],
-      gradient: "from-blue-500 to-cyan-500",
-      bgGradient: "bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20"
+      gradient: "from-rose-500 to-orange-400",
+      bgGradient: "bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-950/20 dark:to-orange-950/20"
     },
     {
       title: "Backend Development", 
@@ -43,8 +43,8 @@ const Skills = () => {
         { name: "Node.js", level: 85 },
         { name: "FastAPI", level: 82 }
       ],
-      gradient: "from-green-500 to-emerald-500",
-      bgGradient: "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20"
+      gradient: "from-amber-500 to-rose-500",
+      bgGradient: "bg-gradient-to-br from-amber-50 to-rose-50 dark:from-amber-950/20 dark:to-rose-950/20"
     },
     {
       title: "AI & Machine Learning",
@@ -85,8 +85,8 @@ const Skills = () => {
         { name: "UI/UX Design", level: 82 },
         { name: "Responsive Design", level: 90 }
       ],
-      gradient: "from-indigo-500 to-blue-500",
-      bgGradient: "bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-950/20 dark:to-blue-950/20"
+      gradient: "from-fuchsia-500 to-rose-500",
+      bgGradient: "bg-gradient-to-br from-fuchsia-50 to-rose-50 dark:from-fuchsia-950/20 dark:to-rose-950/20"
     }
   ];
 
@@ -141,7 +141,7 @@ const Skills = () => {
                         <span className="text-sm font-medium text-foreground group-hover/skill:text-primary transition-colors duration-300">
                           {skill.name}
                         </span>
-                        <span className="text-xs text-muted-foreground font-mono">
+                        <span className="text-xs text-muted-foreground">
                           {skill.level}%
                         </span>
                       </div>
@@ -172,14 +172,14 @@ const Skills = () => {
         <div className="mt-20 text-center">
           <Card className="relative overflow-hidden p-8 shadow-2xl border-0 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-lg max-w-5xl mx-auto group">
             {/* Animated background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-rose-500/10 via-orange-500/10 to-pink-500/10 animate-pulse"></div>
             
             <div className="relative">
               <div className="flex flex-col items-center justify-center gap-3 mb-6">
-                <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+                <div className="p-3 rounded-full bg-gradient-to-r from-rose-500 to-orange-500 text-white">
                   <Code className="h-6 w-6" />
                 </div>
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center">
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-rose-600 to-orange-600 bg-clip-text text-transparent text-center">
                   Continuous Learning Journey
                 </h3>
               </div>
@@ -189,10 +189,10 @@ const Skills = () => {
               </p>
               
               <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="p-4 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 border border-blue-200/50">
+                <div className="p-4 rounded-lg bg-gradient-to-br from-rose-50 to-orange-100 dark:from-rose-950/20 dark:to-orange-900/20 border border-rose-200/50">
                   <div className="text-2xl mb-2">🎯</div>
-                  <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-1">Currently Learning</h4>
-                  <p className="text-sm text-blue-600 dark:text-blue-400">Advanced XAI Techniques</p>
+                  <h4 className="font-semibold text-rose-700 dark:text-rose-300 mb-1">Currently Learning</h4>
+                  <p className="text-sm text-rose-600 dark:text-rose-400">Advanced XAI Techniques</p>
                 </div>
                 
                 <div className="p-4 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20 border border-purple-200/50">
@@ -209,7 +209,7 @@ const Skills = () => {
               </div>
               
               <div className="flex justify-center gap-3 flex-wrap">
-                <Badge className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 hover:scale-105 transition-transform">
+                <Badge className="bg-gradient-to-r from-rose-500 to-orange-500 text-white px-4 py-2 hover:scale-105 transition-transform">
                   <Brain className="h-4 w-4 mr-2" />
                   AI Research
                 </Badge>

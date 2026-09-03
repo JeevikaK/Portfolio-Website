@@ -113,7 +113,7 @@ const ContactForm = () => {
 
       <button
         type="submit"
-        className="group flex h-[52px] w-full items-center justify-between bg-[#1e1f1b] px-6 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#8d6645]"
+        className="glass-cta group flex h-[52px] w-full items-center justify-between px-6 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition hover:-translate-y-0.5"
       >
         Send Message
         <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />

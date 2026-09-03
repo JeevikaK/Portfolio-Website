@@ -1,4 +1,4 @@
-type BotanicalVariant = "about" | "experience" | "projects" | "achievements" | "contact";
+type BotanicalVariant = "hero" | "about" | "experience" | "projects" | "achievements" | "contact";
 
 const LeafBranch = ({ className = "" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 360 520" fill="none">
@@ -25,6 +25,40 @@ const FlowerSprig = ({ className = "" }: { className?: string }) => (
     ))}
   </svg>
 );
+
+const WildflowerCluster = ({ className = "" }: { className?: string }) => {
+  const blooms = [
+    { x: 92, y: 74, size: 1 },
+    { x: 184, y: 42, size: 0.82 },
+    { x: 260, y: 105, size: 1.12 },
+    { x: 144, y: 148, size: 0.7 },
+  ];
+
+  return (
+    <svg className={className} viewBox="0 0 350 330" fill="none">
+      <path d="M56 326C77 243 84 157 92 76M96 326c23-111 55-205 88-282M157 326c30-87 66-155 103-220M111 326c7-72 19-128 33-178" stroke="currentColor" strokeWidth="1.15" />
+      <path d="M77 220c-28-20-50-18-66-7 20 17 42 19 66 7ZM111 257c28-24 58-22 76-7-21 20-47 24-76 7ZM187 226c-23-21-44-22-62-13 15 18 36 23 62 13ZM223 182c27-24 55-24 75-10-20 20-45 25-75 10Z" fill="currentColor" opacity=".4" />
+      {blooms.map(({ x, y, size }) => (
+        <g key={`${x}-${y}`} transform={`translate(${x} ${y}) scale(${size})`}>
+          {Array.from({ length: 8 }).map((_, index) => (
+            <ellipse
+              key={index}
+              cx="0"
+              cy="-17"
+              rx="7"
+              ry="17"
+              transform={`rotate(${index * 45})`}
+              fill="currentColor"
+              opacity={index % 2 === 0 ? ".56" : ".38"}
+            />
+          ))}
+          <circle r="6" fill="currentColor" opacity=".82" />
+          <circle r="2.2" fill="currentColor" />
+        </g>
+      ))}
+    </svg>
+  );
+};
 
 const SeedHeads = ({ className = "" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 420 430" fill="none">
@@ -55,6 +89,15 @@ const ContourBloom = ({ className = "" }: { className?: string }) => (
 );
 
 const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
+  if (variant === "hero") {
+    return (
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden text-white">
+        <WildflowerCluster className="botanical-float absolute -right-12 top-[9%] h-[260px] w-[275px] rotate-[18deg] text-[#e4c2b8] opacity-[.1]" />
+        <FlowerSprig className="absolute -bottom-16 right-[7%] h-[250px] w-[190px] -rotate-[14deg] text-[#d8b9ad] opacity-[.09]" />
+      </div>
+    );
+  }
+
   if (variant === "about") {
     return (
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden text-[#89977d]">
@@ -62,6 +105,8 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
         <LeafBranch className="botanical-sway absolute -right-20 top-24 h-[650px] w-[470px] opacity-[.26]" />
         <FlowerSprig className="botanical-float absolute right-[8%] top-[14%] h-[285px] w-[220px] text-[#bd9b78] opacity-[.2]" />
         <FlowerSprig className="absolute -bottom-28 left-[3%] h-[390px] w-[300px] -rotate-12 text-[#b6906e] opacity-[.15]" />
+        <WildflowerCluster className="botanical-float absolute left-[24%] top-[4%] h-[220px] w-[235px] -rotate-12 text-[#c69588] opacity-[.17]" />
+        <WildflowerCluster className="absolute -bottom-16 right-[18%] h-[260px] w-[275px] rotate-[16deg] text-[#a8a77d] opacity-[.15]" />
       </div>
     );
   }
@@ -72,6 +117,8 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
         <SeedHeads className="absolute -bottom-20 -left-20 h-[500px] w-[490px] -rotate-6 opacity-[.28]" />
         <SeedHeads className="botanical-sway absolute -right-20 -top-12 h-[430px] w-[420px] rotate-[162deg] opacity-[.2]" />
         <FlowerSprig className="absolute bottom-[4%] right-[26%] h-52 w-40 rotate-12 text-[#b28b68] opacity-[.16]" />
+        <WildflowerCluster className="botanical-float absolute left-[22%] top-[3%] h-[210px] w-[225px] rotate-[8deg] text-[#be8f83] opacity-[.2]" />
+        <WildflowerCluster className="absolute -bottom-12 right-[4%] h-[250px] w-[265px] -rotate-[18deg] text-[#9b9f72] opacity-[.17]" />
         <div className="absolute left-[29%] top-[11%] h-28 w-28 rounded-full border border-current opacity-[.12]" />
       </div>
     );
@@ -83,6 +130,8 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
         <ContourBloom className="absolute -left-36 top-8 h-[520px] w-[520px] -rotate-12 opacity-[.2]" />
         <ContourBloom className="botanical-float absolute -right-28 bottom-0 h-[470px] w-[470px] rotate-[22deg] opacity-[.18]" />
         <FlowerSprig className="absolute right-[5%] top-2 h-60 w-48 text-[#b88d66] opacity-[.2]" />
+        <WildflowerCluster className="botanical-float absolute left-[35%] top-[2%] h-[210px] w-[225px] -rotate-[10deg] text-[#c18e83] opacity-[.2]" />
+        <WildflowerCluster className="absolute bottom-[2%] right-[23%] h-[230px] w-[245px] rotate-[20deg] text-[#929d78] opacity-[.16]" />
       </div>
     );
   }
@@ -94,6 +143,8 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
         <LeafBranch className="absolute -right-24 -top-28 h-[500px] w-[360px] rotate-[155deg] opacity-[.17]" />
         <FlowerSprig className="botanical-float absolute right-[4%] top-[38%] h-[300px] w-[230px] -rotate-6 text-[#b38a67] opacity-[.18]" />
         <FlowerSprig className="absolute bottom-[2%] left-[23%] h-52 w-40 rotate-[18deg] text-[#b38a67] opacity-[.12]" />
+        <WildflowerCluster className="botanical-float absolute left-[29%] top-[3%] h-[230px] w-[245px] rotate-[9deg] text-[#c28e86] opacity-[.2]" />
+        <WildflowerCluster className="absolute bottom-[14%] right-[13%] h-[245px] w-[260px] -rotate-[16deg] text-[#8fa080] opacity-[.16]" />
       </div>
     );
   }
@@ -105,6 +156,8 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
         <LeafBranch className="absolute -bottom-52 -left-24 h-[520px] w-[380px] rotate-[76deg] opacity-[.15]" />
         <FlowerSprig className="botanical-float absolute left-[8%] top-[7%] h-[260px] w-[200px] -rotate-12 text-[#b78468] opacity-[.2]" />
         <FlowerSprig className="absolute -bottom-12 right-[30%] h-[270px] w-[210px] rotate-[14deg] text-[#b78468] opacity-[.14]" />
+        <WildflowerCluster className="botanical-float absolute right-[10%] top-[5%] h-[235px] w-[250px] rotate-[12deg] text-[#c18e88] opacity-[.21]" />
+        <WildflowerCluster className="absolute -bottom-10 left-[32%] h-[260px] w-[275px] -rotate-[14deg] text-[#96a17f] opacity-[.17]" />
       </div>
     );
   }

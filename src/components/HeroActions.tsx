@@ -48,14 +48,14 @@ const HeroActions = ({ socialOnly = false }: HeroActionsProps) => {
     <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
       <a
         href="#projects"
-        className="group inline-flex h-[50px] min-w-[190px] self-start items-center justify-between rounded-[8px] bg-[#3958f5] px-6 text-[11px] font-medium uppercase tracking-[0.14em] text-white shadow-[0_12px_28px_rgba(42,72,255,.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#4968ff]"
+        className="glass-cta group inline-flex h-[50px] min-w-[190px] self-start items-center justify-between px-6 text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-1"
       >
         View my work
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" strokeWidth={1.4} />
       </a>
       <a
         href="#contact"
-        className="group inline-flex h-[50px] min-w-[185px] self-start items-center justify-between rounded-[8px] border border-white/60 bg-black/10 px-6 text-[11px] font-medium uppercase tracking-[0.14em] text-white backdrop-blur-[2px] transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#07101a]"
+        className="glass-cta group inline-flex h-[50px] min-w-[185px] self-start items-center justify-between px-6 text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-1"
       >
         Get in touch
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" strokeWidth={1.4} />

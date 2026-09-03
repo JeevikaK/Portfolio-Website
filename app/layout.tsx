@@ -8,19 +8,21 @@ import { ReactNode } from 'react'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jeevikakiran.com'),
   title: {
-    default: 'Jeevika Kiran - AI Engineer & Full Stack Developer',
+    default: 'Jeevika Kiran - AI & Software Engineer',
     template: '%s | Jeevika Kiran'
   },
-  description: 'AI enthusiast and full-stack developer creating intelligent solutions for real-world challenges. Specializing in machine learning, computer vision, and modern web development.',
+  description: 'AI and software engineer building agentic AI tools, scalable intelligent systems, multimodal machine learning applications and robotics research.',
   keywords: [
     'Jeevika Kiran',
     'AI Engineer',
     'Machine Learning',
-    'Full Stack Developer',
+    'Software Engineer',
+    'Agentic AI',
     'Computer Vision',
     'React',
     'Python',
@@ -34,23 +36,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://jeevikakiran.dev',
+    url: 'https://jeevikakiran.com',
     siteName: 'Jeevika Kiran Portfolio',
-    title: 'Jeevika Kiran - AI Engineer & Full Stack Developer',
-    description: 'AI enthusiast and full-stack developer creating intelligent solutions for real-world challenges.',
+    title: 'Jeevika Kiran - AI & Software Engineer',
+    description: 'Agentic AI tools, scalable intelligent systems, multimodal machine learning and robotics research.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jeevika Kiran - AI Engineer & Full Stack Developer',
+        alt: 'Jeevika Kiran - AI & Software Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jeevika Kiran - AI Engineer & Full Stack Developer',
-    description: 'AI enthusiast and full-stack developer creating intelligent solutions for real-world challenges.',
+    title: 'Jeevika Kiran - AI & Software Engineer',
+    description: 'Agentic AI tools, scalable intelligent systems, multimodal machine learning and robotics research.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -78,7 +80,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="canonical" href="https://jeevikakiran.dev" />
+        <link rel="canonical" href="https://jeevikakiran.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -86,9 +88,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Jeevika Kiran",
-              "jobTitle": "AI Engineer & Full Stack Developer",
-              "description": "AI enthusiast and full-stack developer creating intelligent solutions for real-world challenges",
-              "url": "https://jeevikakiran.dev",
+              "jobTitle": "AI & Software Engineer",
+              "description": "AI and software engineer specializing in agentic AI, scalable intelligent systems, multimodal machine learning, and robotics research",
+              "url": "https://jeevikakiran.com",
               "sameAs": [
                 "https://linkedin.com/in/jeevika-kiran-a0957b242",
                 "https://github.com/JeevikaK"
@@ -96,19 +98,22 @@ export default function RootLayout({
               "knowsAbout": [
                 "Artificial Intelligence",
                 "Machine Learning",
+                "Agentic AI",
+                "Retrieval-Augmented Generation",
                 "Computer Vision",
-                "Full Stack Development",
+                "Robotics",
+                "Distributed Systems",
                 "React",
                 "Python",
-                "TensorFlow"
+                "PyTorch"
               ],
               "alumniOf": {
                 "@type": "Organization",
-                "name": "Your University"
+                "name": "Ramaiah Institute of Technology"
               },
-              "worksFor": {
+              "affiliation": {
                 "@type": "Organization",
-                "name": "IBM India Software Labs"
+                "name": "University of Southern California"
               }
             })
           }}

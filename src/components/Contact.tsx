@@ -33,7 +33,7 @@ const Contact = () => {
           </p>
           <h2
             id="contact-title"
-            className="mt-4 max-w-[520px] font-serif text-[clamp(2.8rem,5.1vw,4.9rem)] font-normal leading-[1.02] tracking-[-0.045em] text-[#191915]"
+            className="mt-4 max-w-[520px] text-[clamp(2.8rem,5.1vw,4.9rem)] font-light leading-[1.02] tracking-[-0.045em] text-[#191915]"
           >
             Let&apos;s create something meaningful.
           </h2>
@@ -46,7 +46,7 @@ const Contact = () => {
             {contactDetails.map(({ label, value, href, icon: Icon }) => {
               const content = (
                 <>
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-[#e4d9cb] text-[#5d4b39]">
+                  <span className="grid h-10 w-10 place-items-center rounded-full bg-[#fff0df] text-[#6f4b2f] shadow-[0_6px_16px_rgba(145,91,37,.07)]">
                     <Icon className="h-4 w-4" strokeWidth={1.5} />
                   </span>
                   <span className="min-w-0">
@@ -78,11 +78,11 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="rounded-[22px] border border-[#817b70]/28 bg-[#f6f1e8]/72 p-6 shadow-[0_24px_70px_rgba(68,52,35,.08)] backdrop-blur-[2px] sm:p-9 lg:p-10">
+        <div className="rounded-[22px] border border-[#cda970]/35 bg-[#fffefa]/92 p-6 shadow-[0_24px_70px_rgba(118,73,25,.12)] backdrop-blur-[3px] sm:p-9 lg:p-10">
           <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9b6e4d]">
             Start a conversation
           </p>
-          <h3 className="mt-3 font-serif text-[30px] font-normal tracking-[-0.03em] text-[#22201c]">
+          <h3 className="mt-3 text-[30px] font-light tracking-[-0.03em] text-[#22201c]">
             Send me a message
           </h3>
           <p className="mt-2 text-[12px] font-light leading-5 text-[#4f4b44]/70">
