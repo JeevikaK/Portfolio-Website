@@ -47,21 +47,28 @@ const About = () => {
               <span className="mt-7 block h-px w-10 bg-[#a67c52]" />
               <div className="mt-6 max-w-[650px] text-[14px] font-light leading-[1.75] text-[#282824]/82 sm:text-[15px]">
                 <p>
-                  I&apos;m Jeevika, pursuing an M.S. in Computer Science at USC.
-                  Before graduate school, I worked as a software engineer at IBM
-                  Software Labs. Since then, I&apos;ve moved between industry and
-                  research—building production systems at scale and exploring AI,
-                  robotics and developer tooling.
+                  I&apos;m Jeevika, a graduate student pursuing an M.S. in Computer
+                  Science at USC. I&apos;m particularly interested in AI research and
+                  development—and in turning emerging ideas into systems that are
+                  genuinely useful. Through research collaborations during my
+                  undergraduate studies and at USC, I&apos;ve explored new technologies
+                  and how they can address real-world problems.
+                </p>
+                <p className="mt-4">
+                  Most recently, in Summer 2026, I interned as an AI Foundations
+                  Engineer at the IBM T. J. Watson Research Center, working on
+                  Agent Skills and evaluation methods for AI agents. Before graduate
+                  school, I built infrastructure and backend services for production
+                  AI systems at IBM Software Labs.
                 </p>
                 <div className="mt-5 border-l border-[#a67c52]/70 pl-5">
                   <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#9a704a]">
                     How I work
                   </p>
                   <p className="mt-2.5">
-                    I&apos;m happiest when the answer isn&apos;t obvious—digging into an
-                    unfamiliar problem, testing ideas and understanding why
-                    something works. That space between research and reliable
-                    engineering is where I do my best work.
+                    I&apos;m happiest when the answer isn&apos;t obvious: understanding a
+                    new idea deeply, experimenting with intention, then turning what
+                    works into reliable, practical technology.
                   </p>
                 </div>
               </div>

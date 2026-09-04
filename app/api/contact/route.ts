@@ -1,9 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+const escapeHtml = (value: string) =>
+  value.replace(
+    /[&<>'"]/g,
+    (character) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;',
+      })[character] ?? character,
+  );
+
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, message } = await request.json();
+    const body = await request.json();
+    const name = typeof body.name === 'string'
+      ? body.name.replace(/[\r\n]+/g, ' ').trim()
+      : '';
+    const email = typeof body.email === 'string' ? body.email.trim() : '';
+    const message = typeof body.message === 'string' ? body.message.trim() : '';
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -18,6 +36,13 @@ export async function POST(request: NextRequest) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: 'Invalid email address' },
+        { status: 400 }
+      );
+    }
+
+    if (name.length > 100 || email.length > 254 || message.length > 5000) {
+      return NextResponse.json(
+        { error: 'One or more fields are too long' },
         { status: 400 }
       );
     }
@@ -39,13 +64,13 @@ export async function POST(request: NextRequest) {
       subject: `Portfolio Contact from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #9381FF;">New Contact Form Submission</h2>
-          <div style="background: #f8f7ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
+          <h2 style="color: #9a704a;">New Contact Form Submission</h2>
+          <div style="background: #f4f0e6; padding: 20px; border-radius: 6px; margin: 20px 0;">
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
             <p><strong>Message:</strong></p>
-            <div style="background: white; padding: 15px; border-radius: 4px; border-left: 4px solid #9381FF;">
-              ${message.replace(/\n/g, '<br>')}
+            <div style="background: white; padding: 15px; border-radius: 3px; border-left: 3px solid #9a704a;">
+              ${escapeHtml(message).replace(/\n/g, '<br>')}
             </div>
           </div>
           <p style="color: #666; font-size: 14px;">

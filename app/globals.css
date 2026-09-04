@@ -19,8 +19,6 @@
   opacity: 1;
 }
 
-@import '../src/styles/section-transitions.css';
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -50,32 +48,6 @@
     --chart-5: 27 87% 67%;
   }
 
-  .dark {
-    --background: 24 22% 7%;
-    --foreground: 30 40% 96%;
-    --card: 24 22% 7%;
-    --card-foreground: 30 40% 96%;
-    --popover: 24 22% 7%;
-    --popover-foreground: 30 40% 96%;
-    --primary: 14 48% 62%;
-    --primary-foreground: 24 22% 7%;
-    --secondary: 22 22% 16%;
-    --secondary-foreground: 30 40% 96%;
-    --muted: 22 22% 16%;
-    --muted-foreground: 24 16% 68%;
-    --accent: 350 24% 18%;
-    --accent-foreground: 30 40% 96%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 30 40% 96%;
-    --border: 22 22% 18%;
-    --input: 22 22% 18%;
-    --ring: 14 48% 75%;
-    --chart-1: 14 58% 58%;
-    --chart-2: 350 48% 58%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
 }
 
 @layer base {
