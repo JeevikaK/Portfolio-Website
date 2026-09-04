@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
 type HeroActionsProps = {
   socialOnly?: boolean;
@@ -45,20 +45,30 @@ const HeroActions = ({ socialOnly = false }: HeroActionsProps) => {
   }
 
   return (
-    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+    <div className="mt-8 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center">
       <a
         href="#projects"
-        className="glass-cta group inline-flex h-[50px] min-w-[190px] self-start items-center justify-between px-6 text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-1"
+        className="glass-cta group inline-flex h-[44px] min-w-[154px] self-start items-center justify-between px-5 text-[10px] font-medium uppercase tracking-[0.13em] text-white"
       >
         View my work
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" strokeWidth={1.4} />
       </a>
       <a
         href="#contact"
-        className="glass-cta group inline-flex h-[50px] min-w-[185px] self-start items-center justify-between px-6 text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-1"
+        className="glass-cta group inline-flex h-[44px] min-w-[149px] self-start items-center justify-between px-5 text-[10px] font-medium uppercase tracking-[0.13em] text-white"
       >
         Get in touch
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" strokeWidth={1.4} />
+      </a>
+      <a
+        href="https://drive.google.com/drive/u/0/folders/1hMiCVz5KRhsthcoi6SoNaYX4TlmCvo5m"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open Jeevika Kiran's resume in Google Drive"
+        className="glass-cta group inline-flex h-[44px] min-w-[170px] self-start items-center justify-between px-5 text-[10px] font-medium uppercase tracking-[0.13em] text-white"
+      >
+        Download resume
+        <Download className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" strokeWidth={1.4} />
       </a>
     </div>
   );

@@ -57,9 +57,8 @@ const projects = [
     ],
     liveUrl: "https://www.youtube.com/watch?v=kNfriew4CGc",
     primaryLabel: "Watch demo",
-    secondaryUrl:
-      "https://www.kaggle.com/competitions/ucla-gemini-api-hackathon/writeups/lifelens#3430653",
-    secondaryLabel: "Kaggle write-up",
+    secondaryUrl: "https://github.com/JeevikaK/Life-Lens",
+    secondaryLabel: "View project",
     githubUrl: "https://github.com/JeevikaK/Life-Lens",
     icon: Glasses,
   },
@@ -82,6 +81,9 @@ const projects = [
     ],
     liveUrl:
       "https://drive.google.com/file/d/17JhqY_Z2MobLL9N9fnKZo53WVXx6ZM8x/view?usp=sharing",
+    primaryLabel: "Watch demo",
+    secondaryUrl: "https://github.com/JeevikaK/Foresight",
+    secondaryLabel: "View project",
     githubUrl: "https://github.com/JeevikaK/Foresight",
     icon: BrainCircuit,
   },
@@ -283,7 +285,7 @@ const Projects = () => {
                     <h3 className="mt-2 max-w-[90%] text-[29px] font-light leading-[1.02] tracking-[-0.035em] sm:text-[32px]">
                       {project.title}
                     </h3>
-                    <p className="mt-3 line-clamp-3 text-[12px] font-light leading-[1.55] text-white/75">
+                    <p className="mt-3 line-clamp-4 text-[12px] font-light leading-[1.55] text-white/80">
                       {project.description}
                     </p>
                     <p className="mt-4 truncate text-[9px] font-medium uppercase tracking-[0.14em] text-white/55">

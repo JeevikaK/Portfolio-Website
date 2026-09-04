@@ -50,11 +50,12 @@ const Hero = () => {
               className="hero-reveal hero-after-type mt-4 text-[14px] font-medium leading-tight text-white/70 sm:text-[17px]"
               style={{ animationDelay: "2050ms" }}
             >
-              AI &amp; Software Engineer <span className="mx-1.5 text-[#d18a74]">·</span> USC MSCS
+              AI &amp; Software Engineer <span className="mx-1.5 text-[#d18a74]"></span><br></br>
+              MSCS at University of Southern California
             </p>
 
             <p
-              className="hero-reveal hero-after-type mt-6 max-w-[490px] text-[13px] font-light leading-[1.75] text-white/68 sm:text-[16px]"
+              className="hero-reveal hero-after-type mt-6 max-w-[470px] text-[12px] font-light leading-[1.7] text-white/68 sm:text-[14px]"
               style={{ animationDelay: "2130ms" }}
             >
               I build intelligent developer tools, scalable AI systems and

@@ -79,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
         <link rel="canonical" href="https://jeevikakiran.com" />
         <script
           type="application/ld+json"

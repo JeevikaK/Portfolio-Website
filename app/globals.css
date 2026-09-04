@@ -95,73 +95,94 @@ html {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
+  border: 1px solid rgba(185, 151, 119, 0.38);
+  border-radius: 6px;
   background:
-    linear-gradient(135deg, rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.76));
+    linear-gradient(135deg, rgba(27, 24, 22, 0.92), rgba(8, 7, 6, 0.84));
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.13),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px) saturate(120%);
-  -webkit-backdrop-filter: blur(15px) saturate(120%);
+    0 9px 24px rgba(35, 27, 20, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.11),
+    inset 0 -1px 0 rgba(180, 139, 103, 0.08);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px) saturate(108%);
+  -webkit-backdrop-filter: blur(18px) saturate(108%);
+  transition:
+    transform 360ms cubic-bezier(.2, .75, .2, 1),
+    border-color 360ms ease,
+    background 360ms ease,
+    box-shadow 360ms ease;
 }
 
 .glass-cta::before {
   position: absolute;
   z-index: 0;
-  top: -90%;
-  bottom: -90%;
-  left: -55%;
-  width: 42%;
+  inset: 0;
   background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.08),
-    transparent
+    108deg,
+    transparent 22%,
+    rgba(255, 255, 255, 0.11) 46%,
+    rgba(255, 255, 255, 0.035) 54%,
+    transparent 70%
   );
   content: "";
+  opacity: 0;
   pointer-events: none;
-  transform: skewX(-24deg);
-  transition: left 650ms cubic-bezier(.2, .7, .2, 1);
+  transform: translateX(-105%);
+  transition:
+    transform 620ms cubic-bezier(.2, .7, .2, 1),
+    opacity 220ms ease;
 }
 
 .glass-cta::after {
   position: absolute;
-  inset: 5px;
+  inset: 3px;
   z-index: 0;
-  background:
-    linear-gradient(#fff, #fff) left top / 24px 1px no-repeat,
-    linear-gradient(#fff, #fff) left top / 1px 15px no-repeat,
-    linear-gradient(#fff, #fff) right bottom / 24px 1px no-repeat,
-    linear-gradient(#fff, #fff) right bottom / 1px 15px no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
   content: "";
-  opacity: 0.58;
   pointer-events: none;
-  transition: opacity 300ms ease, inset 300ms ease;
+  transition: border-color 300ms ease;
 }
 
 .glass-cta:hover {
-  border-color: rgba(255, 255, 255, 0.52);
+  border-color: rgba(204, 165, 128, 0.62);
   background:
-    linear-gradient(135deg, rgba(17, 17, 17, 0.94), rgba(0, 0, 0, 0.82));
+    linear-gradient(135deg, rgba(30, 27, 24, 0.95), rgba(8, 7, 6, 0.9));
   box-shadow:
-    0 16px 36px rgba(0, 0, 0, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    0 13px 29px rgba(35, 27, 20, 0.27),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(180, 139, 103, 0.1);
+  transform: translateY(-2px);
 }
 
 .glass-cta:hover::before {
-  left: 120%;
+  opacity: 1;
+  transform: translateX(105%);
 }
 
 .glass-cta:hover::after {
-  inset: 4px;
-  opacity: 0.9;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.glass-cta:active {
+  box-shadow:
+    0 6px 16px rgba(35, 27, 20, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(0) scale(0.992);
+}
+
+.glass-cta svg {
+  opacity: 0.78;
+  transition: color 300ms ease, opacity 300ms ease, transform 300ms ease;
+}
+
+.glass-cta:hover svg {
+  color: #e0b78f;
+  opacity: 1;
 }
 
 .glass-cta:focus-visible {
-  outline: 2px solid rgba(197, 148, 108, 0.9);
+  outline: 2px solid rgba(180, 129, 88, 0.88);
   outline-offset: 3px;
 }
 
@@ -269,7 +290,7 @@ html {
 
 @media (max-width: 639px) {
   .hero-image {
-    object-position: 67% center;
+    object-position: 24% center;
   }
 }
 
@@ -295,6 +316,16 @@ html {
   .glass-cta::before,
   .glass-cta::after {
     transition: none;
+  }
+
+  .glass-cta,
+  .glass-cta svg {
+    transition: none;
+  }
+
+  .glass-cta:hover,
+  .glass-cta:active {
+    transform: none;
   }
 }
 
@@ -407,26 +438,21 @@ html {
 }
 
 .achievement-card {
-  border-color: rgba(202, 154, 91, 0.38);
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(255, 246, 231, 0.98));
-  box-shadow:
-    0 14px 34px rgba(132, 86, 35, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  border-color: rgba(143, 137, 125, 0.28);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 55px rgba(67, 54, 35, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .achievement-card:hover {
-  border-color: rgba(205, 139, 66, 0.62);
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(255, 238, 211, 1));
-  box-shadow:
-    0 18px 40px rgba(137, 82, 25, 0.17),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(142, 93, 50, 0.42);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 58px rgba(67, 54, 35, 0.07);
 }
 
 .recognition-polaroid {
+  isolation: isolate;
   border: 1px solid rgba(111, 103, 91, 0.2);
   background-color: #fffdf8;
   background-image:
@@ -437,14 +463,152 @@ html {
     0 5px 12px rgba(72, 59, 42, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
   transform-origin: center 20%;
+  transition:
+    transform 560ms cubic-bezier(.2, .75, .2, 1),
+    box-shadow 560ms ease,
+    filter 560ms ease;
+}
+
+.recognition-polaroid::before {
+  position: absolute;
+  inset: -30% -55%;
+  z-index: 12;
+  background: linear-gradient(
+    108deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.3) 49%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 64%
+  );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-42%) skewX(-10deg);
+  transition:
+    transform 720ms cubic-bezier(.2, .7, .2, 1),
+    opacity 280ms ease;
 }
 
 .recognition-polaroid::after {
   position: absolute;
   inset: 0;
+  z-index: 13;
   border: 1px solid rgba(255, 255, 255, 0.72);
   content: "";
   pointer-events: none;
+}
+
+.recognition-pin {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  z-index: 20;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(67, 28, 25, 0.58);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff4e9 0 10%, #b87668 18%, #7c3f38 66%, #512824 100%);
+  box-shadow:
+    0 4px 7px rgba(64, 34, 28, 0.34),
+    inset 0 -2px 3px rgba(49, 20, 18, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.55);
+  transform: translateX(-50%);
+  transition:
+    transform 520ms cubic-bezier(.2, .75, .2, 1),
+    filter 520ms ease;
+}
+
+.recognition-polaroid img {
+  transition-duration: 700ms;
+  transition-property: transform, filter;
+  transition-timing-function: cubic-bezier(.2, .75, .2, 1);
+}
+
+.recognition-pin::before {
+  position: absolute;
+  left: 8px;
+  top: 14px;
+  width: 2px;
+  height: 11px;
+  border-radius: 999px;
+  background: linear-gradient(#514a43, #a39a8d);
+  box-shadow: 1px 1px 2px rgba(48, 40, 34, 0.28);
+  content: "";
+  transform: rotate(2deg);
+  transform-origin: top;
+}
+
+.recognition-pin::after {
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  width: 4px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  content: "";
+  transform: rotate(-25deg);
+}
+
+@media (min-width: 1280px) {
+  .recognition-stack {
+    isolation: isolate;
+    align-items: flex-start;
+    padding: 10px 2px 18px;
+  }
+
+  .recognition-stack-item {
+    flex-basis: min(382px, calc((100% + 204px) / 4));
+    transition: transform 520ms cubic-bezier(.2, .75, .2, 1);
+  }
+
+  .recognition-stack-item:not(:first-child) {
+    margin-left: -68px;
+  }
+
+  .recognition-stack-item:nth-child(1) { z-index: 4; }
+  .recognition-stack-item:nth-child(2) { z-index: 3; }
+  .recognition-stack-item:nth-child(3) { z-index: 2; }
+  .recognition-stack-item:nth-child(4) { z-index: 1; }
+
+  .recognition-stack-item:hover,
+  .recognition-stack-item:focus-within {
+    z-index: 10;
+    transform: translateY(-1px);
+  }
+
+  .recognition-stack-item:not(:first-child) .recognition-polaroid-copy {
+    padding-left: 76px;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .recognition-stack-item:hover .recognition-polaroid,
+  .recognition-stack-item:focus-within .recognition-polaroid {
+    filter: saturate(1.02);
+    box-shadow:
+      0 29px 52px rgba(72, 59, 42, 0.19),
+      0 7px 15px rgba(72, 59, 42, 0.11),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px) rotate(0deg) scale(1.006);
+  }
+
+  .recognition-stack-item:hover .recognition-polaroid::before,
+  .recognition-stack-item:focus-within .recognition-polaroid::before {
+    opacity: 0.7;
+    transform: translateX(42%) skewX(-10deg);
+  }
+
+  .recognition-stack-item:hover .recognition-pin,
+  .recognition-stack-item:focus-within .recognition-pin {
+    filter: brightness(1.06);
+    transform: translateX(-50%) translateY(-1px) scale(1.04);
+  }
+
+  .recognition-stack-item:hover .recognition-polaroid img,
+  .recognition-stack-item:focus-within .recognition-polaroid img {
+    filter: saturate(1.035) contrast(1.015);
+  }
 }
 
 .publication-card {
@@ -470,26 +634,62 @@ html {
 
 .publication-visual {
   position: absolute;
-  inset: 0 0 0 auto;
-  width: 62%;
+  right: 12px;
+  top: 58px;
+  bottom: 12px;
+  display: grid;
+  width: 56%;
+  place-items: center;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 13px;
+  background: rgba(246, 242, 236, 0.92);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
   color: var(--publication-soft);
-  opacity: 0.94;
+  opacity: 0.9;
   transition: opacity 500ms ease, transform 700ms cubic-bezier(0.2, 0.75, 0.2, 1);
 }
 
 .publication-card:hover .publication-visual {
   opacity: 1;
-  transform: scale(1.025);
+  transform: scale(1.015);
 }
 
 .publication-visual::before {
   position: absolute;
-  inset: 17% 8% 9% 4%;
+  inset: 0;
   content: "";
-  border-radius: 999px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--publication-accent) 20%, transparent), transparent 68%);
-  filter: blur(2px);
+  background: radial-gradient(circle at 70% 28%, rgba(255, 255, 255, 0.34), transparent 48%);
+  pointer-events: none;
+}
+
+.publication-visual--foresight {
+  background: #e1e2ec;
+}
+
+.publication-visual--authez {
+  background: #f7f7f4;
+}
+
+.publication-motion,
+.publication-motion-placeholder {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.publication-motion--bob {
+  transform: scale(1.08);
+}
+
+.publication-motion--foresight {
+  transform: scale(1.42);
+}
+
+.publication-motion--authez {
+  transform: scale(1.12);
 }
 
 .publication-grid {
@@ -878,6 +1078,14 @@ html {
 
   .publication-card:hover .publication-visual {
     transform: none;
+  }
+
+  .recognition-stack-item,
+  .recognition-polaroid,
+  .recognition-polaroid::before,
+  .recognition-polaroid img,
+  .recognition-pin {
+    transition: none;
   }
 }
 

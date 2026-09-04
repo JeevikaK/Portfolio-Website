@@ -46,8 +46,8 @@ const Contact = () => {
             {contactDetails.map(({ label, value, href, icon: Icon }) => {
               const content = (
                 <>
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-[#fff0df] text-[#6f4b2f] shadow-[0_6px_16px_rgba(145,91,37,.07)]">
-                    <Icon className="h-4 w-4" strokeWidth={1.5} />
+                  <span className="grid h-10 w-10 place-items-center rounded-[5px] border border-black/10 bg-white/18 text-[#171715] transition-colors duration-300 group-hover:border-black/25 group-hover:bg-white/34">
+                    <Icon className="h-[17px] w-[17px]" strokeWidth={1.35} />
                   </span>
                   <span className="min-w-0">
                     <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-[#8f6848]">
@@ -57,7 +57,7 @@ const Contact = () => {
                       {value}
                     </span>
                   </span>
-                  {href && <ArrowUpRight className="ml-auto h-4 w-4 text-[#6d665d]" strokeWidth={1.4} />}
+                  {href && <ArrowUpRight className="ml-auto h-4 w-4 text-[#1b1b18]/55 transition-colors group-hover:text-[#1b1b18]" strokeWidth={1.35} />}
                 </>
               );
 
@@ -78,17 +78,21 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="rounded-[22px] border border-[#cda970]/35 bg-[#fffefa]/92 p-6 shadow-[0_24px_70px_rgba(118,73,25,.12)] backdrop-blur-[3px] sm:p-9 lg:p-10">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9b6e4d]">
-            Start a conversation
-          </p>
-          <h3 className="mt-3 text-[30px] font-light tracking-[-0.03em] text-[#22201c]">
-            Send me a message
-          </h3>
-          <p className="mt-2 text-[12px] font-light leading-5 text-[#4f4b44]/70">
-            I usually respond within two business days.
-          </p>
-          <div className="mt-8">
+        <div className="rounded-[7px] border border-[#8f897d]/28 bg-white/18 p-6 shadow-[0_18px_55px_rgba(67,54,35,.04)] backdrop-blur-[2px] sm:p-8 lg:p-9">
+          <div className="flex flex-col gap-3 border-b border-[#837e73]/25 pb-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#9b6e4d]">
+                Start a conversation
+              </p>
+              <h3 className="mt-2.5 text-[28px] font-light tracking-[-0.03em] text-[#22201c] sm:text-[30px]">
+                Send me a message
+              </h3>
+            </div>
+            <p className="max-w-[190px] text-[11px] font-light leading-[1.55] text-[#4f4b44]/65 sm:pb-1 sm:text-right">
+              Usually replies within two business days.
+            </p>
+          </div>
+          <div className="pt-7">
             <ContactForm />
           </div>
         </div>

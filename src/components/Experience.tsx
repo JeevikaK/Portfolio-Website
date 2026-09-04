@@ -8,6 +8,7 @@ import {
   BrainCircuit,
   ChartNoAxesCombined,
   Check,
+  Cloud,
   Cpu,
   Database,
   GitBranch,
@@ -18,7 +19,6 @@ import {
 import type { SimpleIcon } from "simple-icons";
 import {
   siApachekafka,
-  siDocker,
   siDotnet,
   siFastapi,
   siGit,
@@ -26,7 +26,9 @@ import {
   siJavascript,
   siMeta,
   siMongodb,
+  siMysql,
   siNodedotjs,
+  siOllama,
   siOnnx,
   siOwasp,
   siPlotly,
@@ -34,6 +36,7 @@ import {
   siPython,
   siPytorch,
   siReact,
+  siRabbitmq,
   siRedhatopenshift,
   siStreamlit,
   siVolvo,
@@ -61,8 +64,8 @@ const experiences: ExperienceItem[] = [
     companyMark: "volvo",
     location: "Bengaluru, India",
     description:
-      "Developed a web application proof of concept for unbiased candidate shortlisting, with single sign-on and multi-level access controls across admin and candidate portals.",
-    technologies: ["React", "JavaScript", "SSO", "Node.js", "Git", "MongoDB", "Docker"],
+      "Developed a bias-aware candidate-shortlisting web application that restricted evaluation to job-relevant information and supported secure SSO with multi-level access across admin and candidate portals. The proof of concept streamlined first-round screening while improving fairness, usability and documentation efficiency.",
+    technologies: ["React", "JavaScript", "SSO", "Node.js", "Git", "MongoDB", "MySQL", "Microsoft Azure"],
     achievements: [
       "Reduced human effort in first-round screening by 50%",
       "Cut candidate shortlisting time by 70%",
@@ -77,8 +80,8 @@ const experiences: ExperienceItem[] = [
     companyMark: "ibm",
     location: "Bengaluru, India",
     description:
-      "Built OWASP-based vulnerability detection and automated remediation workflows with IBM Granite, LLaMA and FastAPI, backed by logging pipelines for security trend analysis.",
-    technologies: ["Python", "FastAPI", "IBM Granite", "LLaMA", "OWASP", "IBM Carbon", "SQL"],
+      "Implemented OWASP-based vulnerability detection and automated remediation workflows using IBM Granite, LLaMA and FastAPI. Added database-backed logging and reporting to surface recurring vulnerability patterns, while applying IBM Design Principles and Carbon components to make security insights accessible and actionable.",
+    technologies: ["Python", "JavaScript", "FastAPI", "IBM Granite", "LLaMA", "OWASP", "IBM Carbon", "SQL"],
     achievements: [
       "Reduced manual vulnerability-review workload by 50%",
       "Automated fixes using IBM Granite and LLaMA models",
@@ -93,8 +96,8 @@ const experiences: ExperienceItem[] = [
     companyMark: "ibm",
     location: "Bengaluru, India",
     description:
-      "Engineered Python services, secure LLM workflows, telemetry systems and Kafka analytics pipelines for watsonx Code Assistant, while optimizing relational and NoSQL data models for high-volume workloads.",
-    technologies: ["Python", "FastAPI", "Kafka", "SQL", "NoSQL", "Red Hat OpenShift", "IBM Granite"],
+      "Engineered Python backend services integrating secure APIs, LLM workflows, telemetry systems and Kafka analytics pipelines for watsonx Code Assistant. Designed relational and NoSQL schemas for high-volume structured and unstructured telemetry, enabling real-time insights, richer metadata utilization and reliable model-development workflows.",
+    technologies: ["Python", "FastAPI", "Kafka", "SQL", "NoSQL", "IBM Cloudant", "IBM Cloud", "Red Hat OpenShift", "IBM Granite"],
     achievements: [
       "Built more than 15 production data visualizations",
       "Improved IBM Granite model performance by 70%",
@@ -109,8 +112,8 @@ const experiences: ExperienceItem[] = [
     companyMark: "usc",
     location: "Los Angeles, CA",
     description:
-      "Trained multimodal vision-language models for robotic manipulation and long-horizon task planning, and developed automated evaluation tooling across more than 10 manipulation scenarios.",
-    technologies: ["Python", "PyTorch", "Hugging Face", "Vision-Language Models", "Robotics", "Benchmarking"],
+      "Trained multimodal vision-language models for robotic manipulation and long-horizon task planning, including precise tasks such as cube lifting and charger insertion. Built automated evaluation and benchmarking pipelines that enabled repeatable model comparisons across more than 10 manipulation scenarios.",
+    technologies: ["Python", "PyTorch", "Hugging Face", "OpenPI", "Vision-Language Models", "Robotics", "Benchmarking"],
     achievements: [
       "Achieved 85% success on benchmark manipulation tasks",
       "Reduced model-assessment time by 50%",
@@ -125,8 +128,8 @@ const experiences: ExperienceItem[] = [
     companyMark: "ibm",
     location: "Yorktown Heights, NY",
     description:
-      "Built AI developer tools and Agent Skills for the IBM Granite Agent Laboratory, automating benchmark evaluation, failure analysis and model validation across the model-development lifecycle.",
-    technologies: ["Python", "Streamlit", "Plotly", "Hugging Face", "Transformers", "ONNX", "CI/CD", "IBM Granite"],
+      "Built AI developer tools and reusable Agent Skills for the IBM Granite Agent Laboratory, automating benchmark evaluation, failure analysis and model validation. Developed full-stack workflows that generated interactive HTML, Plotly and Streamlit dashboards through IBM Bob, alongside CI/CD pipelines for compatibility testing across Hugging Face, Transformers and ONNX.",
+    technologies: ["Python", "FastAPI", "Ollama", "RabbitMQ", "MongoDB", "Streamlit", "Plotly", "Hugging Face", "Transformers", "ONNX", "CI/CD", "IBM Granite"],
     achievements: [
       "Reduced manual feedback analysis by 70% with interactive dashboards",
       "Improved Granite compatibility-testing accuracy by 50%",
@@ -148,12 +151,14 @@ const technologyIcons: Record<string, TechnologyIcon> = {
   "React.js": { brand: siReact },
   React: { brand: siReact },
   FastAPI: { brand: siFastapi },
+  Ollama: { brand: siOllama },
+  RabbitMQ: { brand: siRabbitmq },
   ".NET": { brand: siDotnet },
   "Node.js": { brand: siNodedotjs },
   Kafka: { brand: siApachekafka },
   "Red Hat OpenShift": { brand: siRedhatopenshift },
   "IBM Cloud": { ibm: true },
-  Docker: { brand: siDocker },
+  "IBM Cloudant": { ibm: true },
   "IBM Granite": { ibm: true },
   "IBM Carbon": { ibm: true },
   PostgreSQL: { brand: siPostgresql },
@@ -161,6 +166,8 @@ const technologyIcons: Record<string, TechnologyIcon> = {
   SQL: { fallback: Database },
   NoSQL: { fallback: Database },
   MongoDB: { brand: siMongodb },
+  MySQL: { brand: siMysql },
+  "Microsoft Azure": { fallback: Cloud },
   SSO: { fallback: ShieldCheck },
   Git: { brand: siGit },
   LLaMA: { brand: siMeta },
@@ -173,6 +180,7 @@ const technologyIcons: Record<string, TechnologyIcon> = {
   Transformers: { fallback: BrainCircuit },
   "Vision-Language Models": { fallback: BrainCircuit },
   Robotics: { fallback: Bot },
+  OpenPI: { fallback: Bot },
   Benchmarking: { fallback: ChartNoAxesCombined },
   "CI/CD": { fallback: GitBranch },
 };
@@ -253,12 +261,12 @@ const Experience = () => {
             A timeline of my professional journey so far.
           </p>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/drive/u/0/folders/1hMiCVz5KRhsthcoi6SoNaYX4TlmCvo5m"
             target="_blank"
             rel="noreferrer"
-            className="glass-cta group mt-7 inline-flex h-[48px] min-w-[182px] items-center justify-between px-6 text-[10px] font-medium uppercase tracking-[0.16em] text-white transition-all duration-300 hover:-translate-y-0.5"
+            className="glass-cta group mt-7 inline-flex h-[44px] min-w-[174px] items-center justify-between px-5 text-[10px] font-medium uppercase tracking-[0.16em] text-white"
           >
-            View full resume
+            Download resume
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.4} />
           </a>
         </header>
