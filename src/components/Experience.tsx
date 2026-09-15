@@ -244,7 +244,7 @@ const Experience = () => {
     >
       <BotanicalBackdrop variant="experience" />
       <div className="mx-auto grid w-full max-w-[1536px] gap-12 px-6 py-16 sm:px-10 lg:grid-cols-[260px_1fr] lg:gap-14 lg:px-[5.5%] lg:py-[70px]">
-        <header className="relative z-10 lg:pt-1">
+        <header className="relative z-10 lg:pt-1" data-premium-reveal>
           <p className="text-[11px] font-medium uppercase tracking-[0.19em] text-[#a37b54]">
             Experience
           </p>
@@ -271,7 +271,7 @@ const Experience = () => {
           </a>
         </header>
 
-        <div className="relative z-10 min-w-0">
+        <div className="relative z-10 min-w-0" data-premium-reveal>
           <div className="relative hidden grid-cols-4 gap-3 pb-7 md:grid">
             <span className="absolute left-[12.5%] right-[12.5%] top-[31px] h-px bg-[#8b867c]/45" />
             {timelineYears.map((year, index) => {
@@ -324,7 +324,7 @@ const Experience = () => {
             {activeExperiences.map((activeExperience) => (
           <article
             key={`${activeExperience.company}-${activeExperience.period}`}
-            className="grid overflow-hidden rounded-[12px] border border-[#8f897d]/28 bg-white/18 shadow-[0_18px_55px_rgba(67,54,35,.04)] lg:grid-cols-[1fr_300px]"
+            className="premium-surface grid overflow-hidden rounded-[12px] border border-[#8f897d]/28 bg-white/18 shadow-[0_18px_55px_rgba(67,54,35,.04)] hover:border-[#9b704a]/34 hover:bg-white/24 hover:shadow-[0_26px_70px_rgba(67,54,35,.08)] lg:grid-cols-[1fr_300px]"
           >
             <div className="p-6 sm:p-7 lg:p-8">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start">

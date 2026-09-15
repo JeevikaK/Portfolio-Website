@@ -91,7 +91,7 @@ const ContourBloom = ({ className = "" }: { className?: string }) => (
 const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
   if (variant === "hero") {
     return (
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden text-white">
+      <div aria-hidden="true" className="section-botanicals pointer-events-none absolute inset-0 overflow-hidden text-white">
         <WildflowerCluster className="botanical-float absolute -right-12 top-[9%] h-[260px] w-[275px] rotate-[18deg] text-[#e4c2b8] opacity-[.1]" />
         <FlowerSprig className="absolute -bottom-16 right-[7%] h-[250px] w-[190px] -rotate-[14deg] text-[#d8b9ad] opacity-[.09]" />
       </div>
@@ -100,7 +100,7 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
 
   if (variant === "about") {
     return (
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden text-[#89977d]">
+      <div aria-hidden="true" className="section-botanicals pointer-events-none absolute inset-0 overflow-hidden text-[#89977d]">
         <LeafBranch className="botanical-sway absolute -left-24 -top-24 h-[470px] w-[330px] rotate-[122deg] opacity-[.2] sm:-left-12" />
         <LeafBranch className="botanical-sway absolute -right-20 top-24 h-[650px] w-[470px] opacity-[.26]" />
         <FlowerSprig className="botanical-float absolute right-[8%] top-[14%] h-[285px] w-[220px] text-[#bd9b78] opacity-[.2]" />
@@ -113,7 +113,7 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
 
   if (variant === "experience") {
     return (
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden text-[#97724d]">
+      <div aria-hidden="true" className="section-botanicals pointer-events-none absolute inset-0 overflow-hidden text-[#97724d]">
         <SeedHeads className="absolute -bottom-20 -left-20 h-[500px] w-[490px] -rotate-6 opacity-[.28]" />
         <SeedHeads className="botanical-sway absolute -right-20 -top-12 h-[430px] w-[420px] rotate-[162deg] opacity-[.2]" />
         <FlowerSprig className="absolute bottom-[4%] right-[26%] h-52 w-40 rotate-12 text-[#b28b68] opacity-[.16]" />
@@ -126,7 +126,7 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
 
   if (variant === "projects") {
     return (
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden text-[#8e795c]">
+      <div aria-hidden="true" className="section-botanicals pointer-events-none absolute inset-0 overflow-hidden text-[#8e795c]">
         <ContourBloom className="absolute -left-36 top-8 h-[520px] w-[520px] -rotate-12 opacity-[.2]" />
         <ContourBloom className="botanical-float absolute -right-28 bottom-0 h-[470px] w-[470px] rotate-[22deg] opacity-[.18]" />
         <FlowerSprig className="absolute right-[5%] top-2 h-60 w-48 text-[#b88d66] opacity-[.2]" />
@@ -138,7 +138,7 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
 
   if (variant === "achievements") {
     return (
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden text-[#7d8b73]">
+      <div aria-hidden="true" className="section-botanicals pointer-events-none absolute inset-0 overflow-hidden text-[#7d8b73]">
         <LeafBranch className="botanical-sway absolute -left-36 bottom-[-7rem] h-[560px] w-[400px] rotate-[38deg] opacity-[.16]" />
         <LeafBranch className="absolute -right-24 -top-28 h-[500px] w-[360px] rotate-[155deg] opacity-[.17]" />
         <FlowerSprig className="botanical-float absolute right-[4%] top-[38%] h-[300px] w-[230px] -rotate-6 text-[#b38a67] opacity-[.18]" />
@@ -151,7 +151,7 @@ const BotanicalBackdrop = ({ variant }: { variant: BotanicalVariant }) => {
 
   if (variant === "contact") {
     return (
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden text-[#7f907a]">
+      <div aria-hidden="true" className="section-botanicals pointer-events-none absolute inset-0 overflow-hidden text-[#7f907a]">
         <LeafBranch className="botanical-sway absolute -right-20 -top-20 h-[590px] w-[430px] opacity-[.2]" />
         <LeafBranch className="absolute -bottom-52 -left-24 h-[520px] w-[380px] rotate-[76deg] opacity-[.15]" />
         <FlowerSprig className="botanical-float absolute left-[8%] top-[7%] h-[260px] w-[200px] -rotate-12 text-[#b78468] opacity-[.2]" />

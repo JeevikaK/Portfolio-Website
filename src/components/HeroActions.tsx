@@ -45,30 +45,30 @@ const HeroActions = ({ socialOnly = false }: HeroActionsProps) => {
   }
 
   return (
-    <div className="mt-8 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center">
+    <div className="mt-7 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
       <a
         href="#projects"
-        className="glass-cta group inline-flex h-[44px] min-w-[154px] self-start items-center justify-between px-5 text-[10px] font-medium uppercase tracking-[0.13em] text-white"
+        className="glass-cta hero-cta-button group inline-flex self-start items-center justify-between px-4 text-[9px] font-medium uppercase tracking-[0.1em] text-white"
       >
         View my work
-        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" strokeWidth={1.4} />
+        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.35} />
       </a>
       <a
         href="#contact"
-        className="glass-cta group inline-flex h-[44px] min-w-[149px] self-start items-center justify-between px-5 text-[10px] font-medium uppercase tracking-[0.13em] text-white"
+        className="glass-cta hero-cta-button group inline-flex self-start items-center justify-between px-4 text-[9px] font-medium uppercase tracking-[0.1em] text-white"
       >
         Get in touch
-        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" strokeWidth={1.4} />
+        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.35} />
       </a>
       <a
         href="https://drive.google.com/drive/u/0/folders/1hMiCVz5KRhsthcoi6SoNaYX4TlmCvo5m"
         target="_blank"
         rel="noreferrer"
         aria-label="Open Jeevika Kiran's resume in Google Drive"
-        className="glass-cta group inline-flex h-[44px] min-w-[170px] self-start items-center justify-between px-5 text-[10px] font-medium uppercase tracking-[0.13em] text-white"
+        className="glass-cta hero-cta-button group inline-flex self-start items-center justify-between px-4 text-[9px] font-medium uppercase tracking-[0.1em] text-white"
       >
         Download resume
-        <Download className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" strokeWidth={1.4} />
+        <Download className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-y-0.5" strokeWidth={1.35} />
       </a>
     </div>
   );

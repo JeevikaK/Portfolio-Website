@@ -33,7 +33,7 @@ const About = () => {
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col justify-center gap-10 px-6 py-20 sm:px-10 sm:py-24 lg:px-[5.5%] lg:py-[11vh]">
         <div className="grid items-stretch gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-16 xl:gap-24">
-          <div className="min-w-0">
+          <div className="min-w-0" data-premium-reveal>
             <div className="max-w-[720px]">
               <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-[#a67c52]">
                 About me
@@ -83,7 +83,7 @@ const About = () => {
             </div>
           </div>
 
-          <figure className="relative mx-auto w-full max-w-[680px] lg:h-full lg:max-w-none">
+          <figure className="relative mx-auto w-full max-w-[680px] lg:h-full lg:max-w-none" data-premium-reveal>
             <span
               aria-hidden="true"
               className="absolute -bottom-3 -right-3 h-full w-full rounded-[10px] border border-[#a67c52]/28 bg-[#e6ddcf]/35"
@@ -103,11 +103,11 @@ const About = () => {
           </figure>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-premium-reveal>
           {focusAreas.map(({ title, description }) => (
             <article
               key={title}
-              className="group relative flex min-h-[104px] overflow-hidden rounded-[5px] border border-white/60 bg-white/28 px-5 py-[18px] shadow-[0_10px_28px_rgba(64,48,30,.055)] backdrop-blur-[3px] transition-[background-color,border-color,box-shadow] duration-300 hover:border-[#a67c52]/35 hover:bg-white/42 hover:shadow-[0_14px_34px_rgba(64,48,30,.08)]"
+              className="premium-surface group relative flex min-h-[104px] overflow-hidden rounded-[5px] border border-white/60 bg-white/28 px-5 py-[18px] shadow-[0_10px_28px_rgba(64,48,30,.055)] backdrop-blur-[3px] hover:border-[#a67c52]/35 hover:bg-white/42 hover:shadow-[0_18px_38px_rgba(64,48,30,.09)]"
             >
               <span
                 aria-hidden="true"

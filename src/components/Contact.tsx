@@ -27,7 +27,7 @@ const Contact = () => {
     <section id="contact" aria-labelledby="contact-title" className="contact-paper relative isolate overflow-hidden py-24 sm:py-28 lg:py-32">
       <BotanicalBackdrop variant="contact" />
       <div className="relative z-10 mx-auto grid max-w-[1280px] gap-12 px-6 sm:px-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
-        <div>
+        <div data-premium-reveal>
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9b6e4d]">
             Contact
           </p>
@@ -78,7 +78,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="rounded-[7px] border border-[#8f897d]/28 bg-white/18 p-6 shadow-[0_18px_55px_rgba(67,54,35,.04)] backdrop-blur-[2px] sm:p-8 lg:p-9">
+        <div className="premium-surface rounded-[7px] border border-[#8f897d]/28 bg-white/18 p-6 shadow-[0_18px_55px_rgba(67,54,35,.04)] backdrop-blur-[2px] hover:border-[#9b704a]/30 hover:bg-white/23 hover:shadow-[0_28px_72px_rgba(67,54,35,.075)] sm:p-8 lg:p-9" data-premium-reveal>
           <div className="flex flex-col gap-3 border-b border-[#837e73]/25 pb-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#9b6e4d]">

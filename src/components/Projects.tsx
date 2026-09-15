@@ -187,7 +187,7 @@ const Projects = () => {
     <section id="projects" className="projects-paper relative isolate overflow-hidden py-24 sm:py-28 lg:py-32">
       <BotanicalBackdrop variant="projects" />
       <div className="relative z-10 mx-auto max-w-[1536px] px-5 sm:px-8 lg:px-12">
-        <header className="relative mx-auto max-w-3xl text-center">
+        <header className="relative mx-auto max-w-3xl text-center" data-premium-reveal>
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#b28a32]">
             Projects
           </p>
@@ -219,7 +219,7 @@ const Projects = () => {
           </button>
         </header>
 
-        <div className="projects-filters mt-9 flex items-center justify-start gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:justify-center">
+        <div className="projects-filters mt-9 flex items-center justify-start gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:justify-center" data-premium-reveal>
           {filters.map((filter) => (
             <button
               key={filter}
@@ -237,7 +237,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="relative mt-9">
+        <div className="relative mt-9" data-premium-reveal>
           <div
             ref={trackRef}
             className="projects-track grid snap-x snap-mandatory gap-4 overflow-x-auto pb-3 sm:gap-5 lg:gap-6"
@@ -249,7 +249,7 @@ const Projects = () => {
               return (
                 <article
                   key={project.title}
-                  className="group relative h-[500px] snap-start overflow-hidden rounded-[26px] bg-[#292923] sm:h-[545px] lg:h-[570px]"
+                  className="premium-surface group relative h-[500px] snap-start overflow-hidden rounded-[26px] border border-white/10 bg-[#292923] shadow-[0_20px_55px_rgba(45,36,26,.12)] hover:shadow-[0_30px_70px_rgba(45,36,26,.18)] sm:h-[545px] lg:h-[570px]"
                 >
                   <Image
                     src={project.image}

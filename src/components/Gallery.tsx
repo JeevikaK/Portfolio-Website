@@ -168,7 +168,7 @@ const Gallery = () => {
     <section id="gallery" className="achievements-paper relative isolate overflow-hidden py-20 sm:py-24 lg:py-28">
       <BotanicalBackdrop variant="achievements" />
       <div className="relative z-10 mx-auto grid max-w-[1536px] gap-12 px-6 sm:px-10 lg:grid-cols-[320px_1fr] lg:gap-x-12 lg:gap-y-0 lg:px-[5.5%]">
-        <header className="relative max-w-[320px]">
+        <header className="relative max-w-[320px]" data-premium-reveal>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9b6e45]">
             Achievements
           </p>
@@ -182,7 +182,7 @@ const Gallery = () => {
         </header>
 
         <div className="min-w-0 lg:contents">
-          <div className="min-w-0 lg:col-start-2">
+          <div className="min-w-0 lg:col-start-2" data-premium-reveal>
             <div className="flex items-end justify-between gap-5 border-b border-[#837e73]/25 pb-4">
               <div className="flex items-center gap-3">
                 <span className="grid h-9 w-9 place-items-center rounded-[5px] border border-black/10 bg-white/18 text-[#171715]">
@@ -201,7 +201,7 @@ const Gallery = () => {
               {publications.map((publication) => (
                 <article
                   key={publication.url}
-                  className={`publication-card publication-card--${publication.visual} group relative min-h-[248px] overflow-hidden rounded-[14px] bg-[#171a1b] text-white`}
+                  className={`premium-surface publication-card publication-card--${publication.visual} group relative min-h-[248px] overflow-hidden rounded-[14px] bg-[#171a1b] text-white`}
                 >
                   <PublicationVisual type={publication.visual} />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#121210] via-[#151411]/88 to-transparent" />
@@ -247,7 +247,7 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div id="awards-recognitions" className="mt-8 scroll-mt-24 lg:col-span-2 lg:col-start-1">
+          <div id="awards-recognitions" className="mt-8 scroll-mt-24 lg:col-span-2 lg:col-start-1" data-premium-reveal>
             <div className="flex items-end justify-between gap-5 border-b border-[#837e73]/25 pb-4">
               <div className="flex items-center gap-3">
                 <span className="grid h-9 w-9 place-items-center rounded-[5px] border border-black/10 bg-white/18 text-[#171715]">
@@ -323,7 +323,7 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div id="certifications" className="mt-8 scroll-mt-24 lg:col-span-2 lg:col-start-1">
+          <div id="certifications" className="mt-8 scroll-mt-24 lg:col-span-2 lg:col-start-1" data-premium-reveal>
             <div className="flex items-end justify-between gap-5 border-b border-[#837e73]/25 pb-4">
               <div className="flex items-center gap-3">
                 <span className="grid h-9 w-9 place-items-center rounded-[5px] border border-black/10 bg-white/18 text-[#171715]">
@@ -350,7 +350,7 @@ const Gallery = () => {
                 return (
                   <article
                     key={certification.title}
-                    className="achievement-card group relative min-h-[150px] overflow-hidden rounded-[12px] border p-4 transition-colors duration-300"
+                    className="premium-surface achievement-card group relative min-h-[150px] overflow-hidden rounded-[12px] border p-4"
                   >
                     <div className="flex items-start gap-3.5">
                       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[7px] bg-[#191916] text-white shadow-[0_8px_20px_rgba(0,0,0,.12)]">
