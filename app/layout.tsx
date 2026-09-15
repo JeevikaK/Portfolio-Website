@@ -6,14 +6,18 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
+const siteUrl = 'https://www.jeevikakiran.com'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jeevikakiran.com'),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'Jeevika Kiran - AI & Software Engineer',
+    default: 'Jeevika Kiran - AI & Software Engineer Portfolio',
     template: '%s | Jeevika Kiran'
   },
   description: 'AI and software engineer building agentic AI tools, scalable intelligent systems, multimodal machine learning applications and robotics research.',
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     'Jeevika Kiran',
     'AI Engineer',
@@ -30,12 +34,16 @@ export const metadata: Metadata = {
   authors: [{ name: 'Jeevika Kiran', url: 'https://linkedin.com/in/jeevika-kiran-a0957b242' }],
   creator: 'Jeevika Kiran',
   publisher: 'Jeevika Kiran',
+  category: 'technology',
+  icons: {
+    icon: [{ url: '/favicon.svg?v=2', type: 'image/svg+xml' }],
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://jeevikakiran.com',
+    url: siteUrl,
     siteName: 'Jeevika Kiran Portfolio',
-    title: 'Jeevika Kiran - AI & Software Engineer',
+    title: 'Jeevika Kiran - AI & Software Engineer Portfolio',
     description: 'Agentic AI tools, scalable intelligent systems, multimodal machine learning and robotics research.',
     images: [
       {
@@ -48,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jeevika Kiran - AI & Software Engineer',
+    title: 'Jeevika Kiran - AI & Software Engineer Portfolio',
     description: 'Agentic AI tools, scalable intelligent systems, multimodal machine learning and robotics research.',
     images: ['/og-image.jpg'],
   },
@@ -73,42 +81,55 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
-        <link rel="canonical" href="https://jeevikakiran.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Jeevika Kiran",
-              "jobTitle": "AI & Software Engineer",
-              "description": "AI and software engineer specializing in agentic AI, scalable intelligent systems, multimodal machine learning, and robotics research",
-              "url": "https://jeevikakiran.com",
-              "sameAs": [
-                "https://linkedin.com/in/jeevika-kiran-a0957b242",
-                "https://github.com/JeevikaK"
-              ],
-              "knowsAbout": [
-                "Artificial Intelligence",
-                "Machine Learning",
-                "Agentic AI",
-                "Retrieval-Augmented Generation",
-                "Computer Vision",
-                "Robotics",
-                "Distributed Systems",
-                "React",
-                "Python",
-                "PyTorch"
-              ],
-              "alumniOf": {
-                "@type": "Organization",
-                "name": "Ramaiah Institute of Technology"
-              },
-              "affiliation": {
-                "@type": "Organization",
-                "name": "University of Southern California"
-              }
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteUrl}/#website`,
+                  "url": siteUrl,
+                  "name": "Jeevika Kiran Portfolio",
+                  "description": "Portfolio of Jeevika Kiran, an AI and software engineer working across agentic AI, multimodal machine learning and production software systems.",
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "Person",
+                  "@id": `${siteUrl}/#person`,
+                  "name": "Jeevika Kiran",
+                  "jobTitle": "AI & Software Engineer",
+                  "description": "AI and software engineer specializing in agentic AI, scalable intelligent systems, multimodal machine learning, and robotics research",
+                  "url": siteUrl,
+                  "image": `${siteUrl}/og-image.jpg`,
+                  "mainEntityOfPage": { "@id": `${siteUrl}/#website` },
+                  "sameAs": [
+                    "https://linkedin.com/in/jeevika-kiran-a0957b242",
+                    "https://github.com/JeevikaK"
+                  ],
+                  "knowsAbout": [
+                    "Artificial Intelligence",
+                    "Machine Learning",
+                    "Agentic AI",
+                    "Retrieval-Augmented Generation",
+                    "Computer Vision",
+                    "Robotics",
+                    "Distributed Systems",
+                    "React",
+                    "Python",
+                    "PyTorch"
+                  ],
+                  "alumniOf": {
+                    "@type": "Organization",
+                    "name": "Ramaiah Institute of Technology"
+                  },
+                  "affiliation": {
+                    "@type": "Organization",
+                    "name": "University of Southern California"
+                  }
+                }
+              ]
             })
           }}
         />

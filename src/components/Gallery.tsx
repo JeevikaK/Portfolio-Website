@@ -165,14 +165,14 @@ const certifications = [
 
 const Gallery = () => {
   return (
-    <section id="gallery" className="achievements-paper relative isolate overflow-hidden py-20 sm:py-24 lg:py-28">
+    <section id="gallery" aria-labelledby="achievements-title" className="achievements-paper relative isolate overflow-hidden py-20 sm:py-24 lg:py-28">
       <BotanicalBackdrop variant="achievements" />
       <div className="relative z-10 mx-auto grid max-w-[1536px] gap-12 px-6 sm:px-10 lg:grid-cols-[320px_1fr] lg:gap-x-12 lg:gap-y-0 lg:px-[5.5%]">
         <header className="relative max-w-[320px]" data-premium-reveal>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9b6e45]">
             Achievements
           </p>
-          <h2 className="mt-4 max-w-[320px] text-[clamp(2.65rem,3.7vw,3.55rem)] font-light leading-[1.06] tracking-[-0.04em] text-[#171713]">
+          <h2 id="achievements-title" className="mt-4 max-w-[320px] text-[clamp(2.65rem,3.7vw,3.55rem)] font-light leading-[1.06] tracking-[-0.04em] text-[#171713]">
             Milestones That Define My Journey
           </h2>
           <span className="mt-6 block h-px w-10 bg-[#a4744c]" />

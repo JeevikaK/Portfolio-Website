@@ -184,14 +184,14 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="projects-paper relative isolate overflow-hidden py-24 sm:py-28 lg:py-32">
+    <section id="projects" aria-labelledby="projects-title" className="projects-paper relative isolate overflow-hidden py-24 sm:py-28 lg:py-32">
       <BotanicalBackdrop variant="projects" />
       <div className="relative z-10 mx-auto max-w-[1536px] px-5 sm:px-8 lg:px-12">
         <header className="relative mx-auto max-w-3xl text-center" data-premium-reveal>
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#b28a32]">
             Projects
           </p>
-          <h2 className="text-[clamp(2.5rem,4.3vw,4.25rem)] font-light leading-[0.98] tracking-[-0.045em] text-[#151511]">
+          <h2 id="projects-title" className="text-[clamp(2.5rem,4.3vw,4.25rem)] font-light leading-[0.98] tracking-[-0.045em] text-[#151511]">
             My Projects
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-sm font-light leading-6 text-[#58574f] sm:text-[15px]">
@@ -240,7 +240,7 @@ const Projects = () => {
         <div className="relative mt-9" data-premium-reveal>
           <div
             ref={trackRef}
-            className="projects-track grid snap-x snap-mandatory gap-4 overflow-x-auto pb-3 sm:gap-5 lg:gap-6"
+            className="projects-track -mt-2 grid snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pt-2 sm:gap-5 lg:gap-6"
           >
             {visibleProjects.map((project) => {
               const Icon = project.icon;
@@ -260,9 +260,7 @@ const Projects = () => {
                     className="object-cover saturate-[0.82] contrast-[1.03] transition duration-700 ease-out group-hover:scale-[1.035]"
                     style={{ objectPosition: project.imagePosition ?? "center" }}
                   />
-                  <div className="absolute inset-0 bg-[#9b704a]/[0.05] mix-blend-color" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/14 via-black/5 to-black/90" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,transparent_48%,rgba(8,8,7,.18)_66%,rgba(8,8,7,.76)_100%)]" />
 
                   <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-[10px] bg-[#f4f0e5] text-[#1a1a16] shadow-sm">
                     <Icon className="h-[18px] w-[18px]" strokeWidth={1.5} />
