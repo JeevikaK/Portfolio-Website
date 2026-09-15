@@ -1,79 +1,76 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
-const HeroActions = () => {
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
+type HeroActionsProps = {
+  socialOnly?: boolean;
+};
 
-  const downloadResume = () => {
-    // Create a link element and trigger download
-    const link = document.createElement('a');
-    link.href = 'https://drive.google.com/file/d/1yfYiGhenGhYpFbnnvRCKGyfxqcsGDNhI/view?usp=sharing';
-    link.download = 'Jeevika_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/jeevika-kiran-a0957b242/",
+    icon: Linkedin,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/JeevikaK",
+    icon: Github,
+  },
+  {
+    label: "Email Jeevika",
+    href: "mailto:jeevika.kiran@gmail.com",
+    icon: Mail,
+  },
+];
+
+const HeroActions = ({ socialOnly = false }: HeroActionsProps) => {
+  if (socialOnly) {
+    return (
+      <div className="flex items-center gap-3">
+        {socialLinks.map(({ label, href, icon: Icon }) => (
+          <a
+            key={label}
+            href={href}
+            aria-label={label}
+            target={href.startsWith("http") ? "_blank" : undefined}
+            rel={href.startsWith("http") ? "noreferrer" : undefined}
+            className="group grid h-[42px] w-[42px] place-items-center rounded-full border border-white/45 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#4568ff] hover:bg-[#4568ff]"
+          >
+            <Icon className="h-[17px] w-[17px] transition-transform duration-300 group-hover:scale-105" strokeWidth={1.7} />
+          </a>
+        ))}
+      </div>
+    );
+  }
 
   return (
-    <>
-      {/* Action Buttons */}
-      <div className="flex gap-4 justify-center lg:justify-start flex-wrap animate-fade-in mb-8" style={{animationDelay: '0.4s'}}>
-        <Button 
-          size="lg" 
-          className="bg-[#9381FF] text-white hover:bg-[#B8B8FF] hover:text-gray-800 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 px-8 py-3 rounded-full font-semibold"
-          onClick={() => scrollToSection('projects')}
-        >
-          View My Work
-        </Button>
-        <Button 
-          size="lg"
-          className="bg-[#F8F7FF] text-[#9381FF] hover:bg-[#B8B8FF] hover:text-white border-2 border-[#9381FF] shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 px-8 py-3 rounded-full font-semibold"
-          onClick={downloadResume}
-        >
-          <Download className="h-4 w-4 mr-2" />
-          Download Resume
-        </Button>
-        <Button 
-          size="lg"
-          className="bg-[#FFEEDD] text-[#9381FF] hover:bg-[#FFD8BE] hover:text-gray-800 border-2 border-[#FFD8BE] transition-all duration-300 hover:scale-105 px-8 py-3 rounded-full font-semibold"
-          onClick={() => scrollToSection('contact')}
-        >
-          Get In Touch
-        </Button>
-      </div>
-      
-      {/* Social Media Icons */}
-      <div className="flex gap-6 justify-center lg:justify-start animate-fade-in" style={{animationDelay: '0.6s'}}>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="text-[#9381FF] hover:bg-[#F8F7FF] hover:text-[#9381FF] transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-lg hover:shadow-xl group border border-[#B8B8FF]/30"
-          onClick={() => window.open('https://github.com/JeevikaK', '_blank')}
-        >
-          <Github className="h-6 w-6 group-hover:animate-glow" />
-        </Button>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="text-[#9381FF] hover:bg-[#F8F7FF] hover:text-[#9381FF] transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-lg hover:shadow-xl group border border-[#B8B8FF]/30"
-          onClick={() => window.open('https://www.linkedin.com/in/jeevika-kiran-a0957b242/', '_blank')}
-        >
-          <Linkedin className="h-6 w-6 group-hover:animate-glow" />
-        </Button>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="text-[#9381FF] hover:bg-[#F8F7FF] hover:text-[#9381FF] transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-lg hover:shadow-xl group border border-[#B8B8FF]/30"
-          onClick={() => window.open('https://mail.google.com/mail/u/0/#inbox', '_blank')}
-        >
-          <Mail className="h-6 w-6 group-hover:animate-glow" />
-        </Button>
-      </div>
-    </>
+    <div className="mt-7 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+      <a
+        href="#projects"
+        className="glass-cta hero-cta-button group inline-flex self-start items-center justify-between px-4 text-[9px] font-medium uppercase tracking-[0.1em] text-white"
+      >
+        View my work
+        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.35} />
+      </a>
+      <a
+        href="#contact"
+        className="glass-cta hero-cta-button group inline-flex self-start items-center justify-between px-4 text-[9px] font-medium uppercase tracking-[0.1em] text-white"
+      >
+        Get in touch
+        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.35} />
+      </a>
+      <a
+        href="https://drive.google.com/drive/u/0/folders/1hMiCVz5KRhsthcoi6SoNaYX4TlmCvo5m"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open Jeevika Kiran's resume in Google Drive"
+        className="glass-cta hero-cta-button group inline-flex self-start items-center justify-between px-4 text-[9px] font-medium uppercase tracking-[0.1em] text-white"
+      >
+        Download resume
+        <Download className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-y-0.5" strokeWidth={1.35} />
+      </a>
+    </div>
   );
 };
 

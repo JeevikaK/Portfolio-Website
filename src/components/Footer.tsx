@@ -1,51 +1,39 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/JeevikaK", icon: Github },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/jeevika-kiran-a0957b242/", icon: Linkedin },
+  { label: "Email", href: "mailto:jeevika.kiran@gmail.com", icon: Mail },
+];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 bg-background border-t border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center space-y-6">
-          <div className="text-center mb-4">
-            <p className="text-lg text-foreground mb-2">Thanks for stopping by!</p>
-            <p className="text-muted-foreground">Can&apos;t wait to hear from you and explore new opportunities together.</p>
-          </div>
-          
-          <div className="flex gap-6">
-            <a 
-              href="https://github.com/JeevikaK"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 rounded-md"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/jeevika-kiran-a0957b242/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 rounded-md"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a 
-              href="mailto:jeevika.kiran@gmail.com"
-              className="inline-flex items-center justify-center w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 rounded-md"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
-          </div>
-          
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <span>Made with</span>
-            <Heart className="h-4 w-4 text-primary fill-current" />
-            <span>by Jeevika Kiran</span>
-          </div>
-          
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} All rights reserved.
+    <footer className="footer-ink border-t border-white/15 text-[#f4f1eb]">
+      <div className="mx-auto flex max-w-[1536px] flex-col gap-5 px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-[5.5%]">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#d0a17e]">
+            Thanks for stopping by
           </p>
+          <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.14em] text-white/45">
+            © {currentYear} Jeevika Kiran. All rights reserved.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-2" aria-label="Social links">
+          {socialLinks.map(({ label, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              aria-label={label}
+              className="grid h-9 w-9 place-items-center rounded-full border border-white/20 bg-white/[0.04] text-white/65 shadow-[inset_0_1px_0_rgba(255,255,255,.08)] transition hover:border-[#d0a17e] hover:bg-[#d0a17e] hover:text-[#17110f]"
+            >
+              <Icon className="h-3.5 w-3.5" strokeWidth={1.5} />
+            </a>
+          ))}
         </div>
       </div>
     </footer>

@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
@@ -64,61 +63,68 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="space-y-2">
-        <label htmlFor="name" className="text-sm font-medium text-foreground">
-          Name
-        </label>
-        <Input
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="border-primary/20 focus:border-primary transition-colors duration-300"
-          placeholder="Your name"
-        />
+    <form onSubmit={handleSubmit}>
+      <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div className="space-y-1.5">
+          <label htmlFor="name" className="px-3 text-[9px] font-medium uppercase tracking-[0.17em] text-[#6c6257]">
+            Name
+          </label>
+          <Input
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="h-11 rounded-[3px] border-0 border-b border-[#756e63]/40 bg-transparent px-3 text-[13px] font-light shadow-none transition-colors placeholder:text-[#68635b]/35 focus-visible:border-[#8f6848] focus-visible:bg-[#fffaf1]/28 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+            placeholder="Jeevika Kiran"
+          />
+        </div>
+
+        <div className="space-y-1.5">
+          <label htmlFor="email" className="px-3 text-[9px] font-medium uppercase tracking-[0.17em] text-[#6c6257]">
+            Email
+          </label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="h-11 rounded-[3px] border-0 border-b border-[#756e63]/40 bg-transparent px-3 text-[13px] font-light shadow-none transition-colors placeholder:text-[#68635b]/35 focus-visible:border-[#8f6848] focus-visible:bg-[#fffaf1]/28 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div className="space-y-1.5 sm:col-span-2">
+          <label htmlFor="message" className="px-3 text-[9px] font-medium uppercase tracking-[0.17em] text-[#6c6257]">
+            Message
+          </label>
+          <Textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows={5}
+            className="resize-none rounded-[3px] border-0 border-b border-[#756e63]/40 bg-transparent px-3 py-3 text-[13px] font-light leading-6 shadow-none transition-colors placeholder:text-[#68635b]/35 focus-visible:border-[#8f6848] focus-visible:bg-[#fffaf1]/28 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+            placeholder="Tell me a little about what you’re working on..."
+          />
+        </div>
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="email" className="text-sm font-medium text-foreground">
-          Email
-        </label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="border-primary/20 focus:border-primary transition-colors duration-300"
-          placeholder="your.email@example.com"
-        />
+      <div className="mt-7 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-[10px] font-light tracking-[0.03em] text-[#5d574f]/60">
+          All fields are required.
+        </p>
+        <button
+          type="submit"
+          className="glass-cta group flex h-[44px] w-full items-center justify-between px-5 text-[9px] font-semibold uppercase tracking-[0.18em] text-white sm:w-[178px]"
+        >
+          Send message
+          <Send className="h-[15px] w-[15px] transition-transform group-hover:translate-x-1" strokeWidth={1.4} />
+        </button>
       </div>
-
-      <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-foreground">
-          Message
-        </label>
-        <Textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows={5}
-          className="border-primary/20 focus:border-primary transition-colors duration-300 resize-none"
-          placeholder="Tell me about your project..."
-        />
-      </div>
-
-      <Button 
-        type="submit"
-        className="w-full bg-primary/70 hover:bg-primary/60 shadow-soft transition-all duration-300 hover:scale-[1.02] flex items-center gap-2"
-      >
-        <Send className="h-4 w-4" />
-        Send Message
-      </Button>
     </form>
   );
 };

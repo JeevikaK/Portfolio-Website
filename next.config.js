@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    optimizePackageImports: ['lucide-react'],
   },
   images: {
-    domains: ['localhost'],
     formats: ['image/webp', 'image/avif'],
+    qualities: [85, 90, 95],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
